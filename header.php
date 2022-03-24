@@ -18,7 +18,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
-	
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -29,6 +29,7 @@
 
 	</header><!-- #masthead -->
 
+	<div class="cursor"></div>
 	<div class="pre-load bg-main-color"></div>
 	<div class="pre-load bg-white"></div>
 
