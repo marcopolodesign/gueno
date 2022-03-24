@@ -1,0 +1,34 @@
+:root {
+ --mainColor: "";
+ --mainLightColor: "";
+ --mainDarkColor: "";
+  --mainFont: 'Everett', Helvetica, serif;
+  /* --secondaryFont: 'GT Super Display', Georgia, serif;  */
+}
+
+@font-face {
+    font-family: 'Everett';
+    src: url('fonts/Everett-Light.eot');
+    src: url('fonts/Everett-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Everett-Light.woff2') format('woff2'),
+        url('fonts/Everett-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Everett';
+    src: url('fonts/Everett-Regular.eot');
+    src: url('fonts/Everett-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Everett-Regular.woff2') format('woff2'),
+        url('fonts/Everett-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+  font-family: --var(mainFont);
+}

@@ -144,11 +144,6 @@ function gueno_scripts() {
 	wp_enqueue_style('gueno-marcopolo', get_template_directory_uri() . '/css/marcopolo.css');
 	wp_enqueue_style('gueno-custom', get_template_directory_uri() . '/css/custom.css');
 	wp_enqueue_script( 'gueno-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'gueno-barba', get_template_directory_uri() . '/js/barba.js',  array( 'jquery' ), '0.5.2' , true);
-
-	wp_enqueue_script( 'gueno-prefetch', get_template_directory_uri() . '/js/barba-prefetch.js',  array( 'jquery' ), '0.5.2' , true);
-
-	wp_enqueue_script( 'gueno-gsap', get_template_directory_uri() . '/js/gsap.js',  array( 'jquery' ), '0.5.2' , true);
 
 	wp_enqueue_script( 'gueno-main', get_template_directory_uri() . '/js/main.js',  array( 'jquery' ), '0.5.2' , true);
 

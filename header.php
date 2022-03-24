@@ -18,6 +18,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+	
 </head>
 
 <body <?php body_class(); ?>>
@@ -27,3 +28,8 @@
 	<header id="masthead" class="site-header">
 
 	</header><!-- #masthead -->
+
+	<div class="pre-load bg-main-color"></div>
+	<div class="pre-load bg-white"></div>
+
+	<div data-barba="wrapper">
