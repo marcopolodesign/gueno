@@ -22,8 +22,6 @@
 body {
   margin: auto;
   color: #000;
-  font-weight: normal;
-  font-family: var(--messina);
 }
 
 body.bg-white {
@@ -37,10 +35,9 @@ h2 {
 }
 
 p {
-  font-family: var(--messina);
+  font-family: var(--mainFont);
   font-weight: 300;
   font-weight: normal;
-  font-size: 0.875em;
   line-height: 1.68;
 }
 
@@ -522,9 +519,6 @@ p.lh1 {
   color: #000;
 }
 
-.header-nav a {
-  font-size: 0.875em;
-}
 
 .has-after::after,
 .header-nav a::after,
@@ -875,10 +869,7 @@ p.lh1 {
   animation: load 1s infinite linear;
 } */
 
-h1.f0 {
-  font-size: 5rem;
-  letter-spacing: -1px;
-}
+
 
 #main,
 #primary {
