@@ -1384,6 +1384,10 @@ span.white {
     padding-bottom: 4rem;
   }
 
+  .column-reverse-mobile {
+    flex-direction: column-reverse;
+  }
+
   .column-mobile {
     flex-direction: column;
   }

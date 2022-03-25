@@ -2,10 +2,14 @@
  --mainColor: #66CA70;
  --mainLightColor: "";
  --mainDarkColor: #1E3256;
+ --mainGradient: linear-gradient(91.51deg, #85E38E -5.56%, #60BCC9 103.73%);
+ --secondaryGradient: linear-gradient(91.51deg, #85E38E -5.56%, #8977D4 36.52%, #60BCC9 103.73%);
  --grey: #AAAAAA;
   --mainFont: 'Everett', Helvetica, serif;
   --smooth: all 0.45s cubic-bezier(0.4, 0, 0, 1);
   /* --secondaryFont: 'GT Super Display', Georgia, serif;  */
+
+  --border-radius: 8px;
 }
 
 @font-face {
@@ -32,17 +36,33 @@
 
 
 body {
-  font-family: --var(mainFont);
+  font-family: var(--mainFont);
 }
 
+/* ADD TO MP.CSS later */
+
+.smooth-t {
+  transition: var(--smooth);
+}
 
 /* Cheatsheet Güeno */
+
+img.icon {
+  width: 80px !important;
+  height: auto !important;
+}
+
+.gueno-br {
+  border-radius: var(--border-radius);
+}
 
 /* Colors */
 
 .main-font {
   font-family: var(--mainFont);
 }
+
+
 .bg-main-color {
   background-color: var(--mainColor);
 }
@@ -51,6 +71,13 @@ body {
   color: var(--mainColor);
 }
 
+.bg-main-gradient {
+  background: var(--mainGradient);
+}
+
+.bg-secondary-gradient {
+  background: var(--secondaryGradient)
+}
 
 .bg-main-dark-color {
   background-color: var(--mainDarkColor);
@@ -81,7 +108,7 @@ body {
 .main-cta {
   padding: 10px 35px;
   border-radius: 100px;
-  display: flex;
+  display: inline-flex;
   transition: var(--smooth)
 }
 
@@ -211,4 +238,59 @@ body {
 
 .card:hover .card-inner-bg {
   background-color: var(--mainDarkColor)
+}
+
+
+.mp-item {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* filter: blur(12px);
+  -webkit-filter: blur(12px); */
+  backdrop-filter: blur(8px); 
+  border-radius: 8px;
+  flex: 1 1 0px;
+  background-color: #fff;
+}
+
+.mp-item:hover {
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.35);
+  transform: scale(1.02)
+}
+
+
+
+.mp-items-bg > *{
+  /* transform: translateX(50%); */
+  width: 60%;
+  margin: auto;
+}
+
+
+.mp-banner-cta .absolute-cover {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+
+.mp-banner-cta:hover {
+  background: var(--mainGradient);
+}
+
+
+.mp-banner-cta:hover .absolute-cover {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.mp-banner-cta * {
+  transition: var(--smooth);
+}
+
+.mp-banner-cta:hover * {
+  color: var(--mainDarkColor)
+}
+
+
+.mp-banner-cta:hover .bg-main-gradient {
+  opacity: 1;
 }
