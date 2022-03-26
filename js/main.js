@@ -236,3 +236,12 @@ window.addEventListener('resize', () => {
 });
 
 
+
+setInterval(() => {
+  document.querySelectorAll('.ball-gradient').forEach(s => {
+    // if (s.classList.contains('change')) {
+    s.classList.toggle('o-0');
+    // }
+  })
+}, 5000);
+
