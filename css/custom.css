@@ -152,10 +152,57 @@ img.icon {
   color: #1E3256
 }
 
+/* Generals */
 
+.footer-inner {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.footer-inner > div:not(:last-child) {
+  flex: 1 1 0px;
+  border-right: 1px solid #000;
+}
+
+.footer-inner .nav ul {
+  list-style-type: none;
+}
+
+.footer-inner .nav ul li:not(:first-child) {
+  border-top: 1px solid #000;
+
+}
+
+.footer-inner .nav ul li {
+  padding: 30px 5px;
+  display: flex;
+}
+
+.footer-inner .nav ul li a {
+  font-size: 30px;
+  display: inline-flex;
+  margin: auto;
+}
+
+.footer-social li {
+  padding: 10px 0px;
+  display: flex;
+  height: 100%;
+}
+
+.footer-social li a {
+  margin: auto;
+}
+
+.footer-social li:not(:first-child) {
+  border-top: 1px solid #000;
+}
 
 /* HOME Desktop */
 
+.map-content img {
+  mix-blend-mode: multiply;
+}
 
 .map-texture-1 {
   left: -3%;
@@ -177,7 +224,7 @@ img.icon {
 }
 
 .cards-container {
-  margin-bottom: -300px;
+  margin-bottom: -250px;
 }
 
 .card {
@@ -185,6 +232,15 @@ img.icon {
   transition: var(--smooth);
   background-color: transparent;
 }
+
+.card:nth-child(2) .card-inner-bg{
+  background-color: #94DA9B;
+}
+
+.card:nth-child(3) .card-inner-bg {
+  background-color: #B4E5B9;
+}
+
 
 .card-inner-bg {
     overflow: hidden;
@@ -237,7 +293,7 @@ img.icon {
 }
 
 .card:hover .card-inner-bg {
-  background-color: var(--mainDarkColor)
+  background-color: var(--mainDarkColor) !important;
 }
 
 
@@ -275,6 +331,10 @@ img.icon {
   background: var(--mainGradient);
 }
 
+.mp-banner-cta:hover div.main-cta {
+  padding: 10px 43px;
+}
+
 
 .mp-banner-cta:hover .absolute-cover {
   opacity: 1;
@@ -293,4 +353,39 @@ img.icon {
 
 .mp-banner-cta:hover .bg-main-gradient {
   opacity: 1;
+}
+
+/* Set animations for home desktop */
+
+@media (min-width: 600px) {
+  .home-starter > * {
+    opacity: 0;
+  }
+
+  .will-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: var(--smooth)
+  }
+
+  .will-animate.in-view {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.ti-cursor {
+  /* color: #fff; */
+  font-weight: 300 !important;
+}
+
+
+
+
+/* Reusable Blocks */
+
+.logos-container img {
+  width: 130px !important;
+  height: auto !important;
+  margin: auto;
 }

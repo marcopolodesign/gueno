@@ -12,12 +12,13 @@
 
 
 <style>
+
 .ball-gradient {
   filter: blur(22px);
   border-radius: 100%;
   animation: bounce 5s linear infinite both;
   animation-duration: 5s;
-  transition: var(--smooth)
+  transition: var(--smooth);
 }
 
 .big-gradient.second {

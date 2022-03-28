@@ -1,10 +1,8 @@
 <?php get_header(); ?>
 <main id="main" data-barba="container" data-barba-namespace="home" class="home no-mt" bg-color="white">
   <section class="relative mt5">
-    <div class="container">
-      <h1 class="black tc f0">Seamless user compliance in Latam</h1>
-      <h2 class="f3 tc mt3 fw3 lh-copy">One API to comply 600M users in over 20 countries, which are 50% unbanked. Local, comply locally, hazard free. Welcome to Güeno.</h2>
-
+    <div class="container home-starter">
+      <?php the_field('home_starter');?>
       <div class="home-cta-starters mt3 flex flex-column justify-center w-100 align-center">
         <a class="main-cta has-gradient w-max center">
           <p>Start now for Free</p>
@@ -14,17 +12,20 @@
         </a>
       </div>
     </div>
-   
 
-    <div class="map-content relative mt5">
-      <div class="flex flex-column justify-center items-center absolute-center">
+    <?php get_template_part('template-parts/content/home-gradients'); ?>
+  </section>
+
+  <section class="map-container will-animate">
+    <div class="map-content relative mt5 ">
+      <div class="flex flex-column justify-center items-center absolute-center z-5">
         <div id="w-node-_79ba1455-8a32-e925-dc52-bf7cf78044f9-9f3e1567" class="code-ui-snippet">
           <div class="code-ui-snippet-row">
-              <div class="code-row-number">
-                <div>12</div>
-                </div>
-                <div class="code-row-content">
-                <div class="code-ui-snippet-text">onboarding ( id: ‘<span class="text-primary-2">API Pay</span>’)
+            <div class="code-row-number">
+              <div>12</div>
+            </div>
+              <div class="code-row-content">
+                <div id="onbording-type" class="code-ui-snippet-text">onboarding ( id:'<span class="text-primary-2">API Pay</span>’)
                 </div>
               </div>
           </div>
@@ -32,16 +33,15 @@
         <div class="mv3">
           <?php get_template_part('template-parts/content/user-card'); ?>
         </div>
-
         <div id="w-node-_79ba1455-8a32-e925-dc52-bf7cf78044f9-9f3e1567" class="code-ui-snippet">
-          <div class="code-ui-snippet-row">
-              <div class="code-row-number">
-                <div>16</div>
+            <div class="code-ui-snippet-row">
+                <div class="code-row-number">
+                  <div>16</div>
                 </div>
                 <div class="code-row-content">
-                <div class="code-ui-snippet-text">2021-1u-06 15:52:00 [200] payment intent.succeeded ( id: ‘<span class="text-primary-2">API Pay</span>’)
+                  <div class="code-ui-snippet-text">2021-1u-06 15:52:00 [200] payment intent.succeeded ( id: ‘<span class="text-primary-2">API Pay</span>’)
                 </div>
-              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -56,95 +56,11 @@
         <?php get_template_part('template-parts/content/map-texture-1'); ?>
       </div>
     </div>
-
-    <?php get_template_part('template-parts/content/home-gradients'); ?>
-
   </section>
 
+  <?php get_template_part('template-parts/reusable-content'); ?>
 
-  <section class="home-clients mt5">
-    <h2 class="f3 tc mt3 fw3 lh-copy main-color">Trusted by Latam's finest</h2>
-  </section>
-
-  <section class="cards container mt5">
-    <div class="cards-container">
-    
-    <div class="card relative pa4">
-        <div class="card-inner-bg bg-main-color"></div>
-         <div class="card-content">
-            <div class="flex jic">
-              <h1 class="main-dark-color f0">For Developers</h1>
-              <h2 class="white f2">01 /</h2>
-            </div>
-
-            <p class="main-dark-color lh-copy mt3 f3 measure">Nos sacrificamos para que sus equipos no necesiten unir sistemas dispares o pasar meses integrando las funcionalidades y pagos.</p>
-            <a class="mt4 has-after main-dark-color main-font">Request a demo</a>
-        </div>
-      </div>
-
-      <div class="card relative pa4">
-        <div class="card-inner-bg bg-main-color"></div>
-         <div class="card-content">
-            <div class="flex jic">
-              <h1 class="main-dark-color f0">Comply Locally</h1>
-              <h2 class="white f2">02 /</h2>
-            </div>
-
-            <p class="main-dark-color lh-copy mt3 f3 measure">Nos sacrificamos para que sus equipos no necesiten unir sistemas dispares o pasar meses integrando las funcionalidades y pagos.</p>
-            <a class="mt4 has-after main-dark-color main-font">Request a demo</a>
-        </div>
-      </div>
-
-      <div class="card relative pa4">
-        <div class="card-inner-bg bg-main-color"></div>
-         <div class="card-content">
-            <div class="flex jic">
-              <h1 class="main-dark-color f0">Scale hazard free</h1>
-              <h2 class="white f2">03 /</h2>
-            </div>
-
-            <p class="main-dark-color lh-copy mt3 f3 measure">Nos sacrificamos para que sus equipos no necesiten unir sistemas dispares o pasar meses integrando las funcionalidades y pagos.</p>
-            <a class="mt4 has-after main-dark-color main-font">Request a demo</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <section class="bg-white relative z-5 w-100 pv6 mp-items-container container relative">
-    <div class="mp-items-inner-c z-5">
-      <h1 class="fw4 f1 tc black pt5 measure center ph6-ns">AML & KYC Compliance Solution for LatAm</h1>
-      <h2 class="fw3 f3 tc black mt2">Go safe, go massive.</h2>
-
-      <div class="mp-items-inner flex column-mobile justify-between items-stretch mt5">
-        <div class="mp-item smooth-t pa3 mh3-ns">
-          <img class="icon db ml-0 mr-auto" src="/wp-content/uploads/2022/03/Screen-Shot-2022-03-18-at-15.27-1.jpg">
-          <h3 class="f4 black mv2">KYC - KNOW YOUR CLIENT</h3>
-          <p>Stop fraud, protect your business and your clients.</p>
-        </div>
-
-        <div class="mp-item smooth-t pa3 mh3-ns">
-          <img class="icon db ml-0 mr-auto" src="/wp-content/uploads/2022/03/Screen-Shot-2022-03-18-at-15.27-1.jpg">
-          <h3 class="f4 black mv2">AML - ANTI-MONEY LAUDERING</h3>
-          <p>No black money in your Ecosystem. Even for crypto funds.</p>
-        </div>
-
-        <div class="mp-item smooth-t pa3 mh3-ns">
-          <img class="icon db ml-0 mr-auto" src="/wp-content/uploads/2022/03/Screen-Shot-2022-03-18-at-15.27-1.jpg">
-          <h3 class="f4 black mv2">COMPLIANCE — LATAM FOCUSED</h3>
-          <p>Stop fraud, protect your business and your clients.</p>
-        </div>
-    </div>
-
-    <div class="absolute top-0 mp-items-bg z--1 flex align-center">
-      <?php get_template_part('template-parts/content/gradient-bg'); ?>
-    </div>
-    </div>
-  </section>
-
-
-  <section class="mp-text-image mt5 flex jic column-reverse-mobile container-left ">
+  <section class="mp-text-image mt5 flex jic column-reverse-mobile container-left will-animate">
     <div class="w-40-ns">
       <p class="f6">ONE API. +20 COUNTRIES</p>
       <h1 class="f1 mt3 mb2">Designed by and for developers</h1>
@@ -160,22 +76,22 @@
   </section>
 
 
-  <section class="mp-data-numbers flex jic container mv6">
+  <section class="mp-data-numbers flex jic container mv6 will-animate">
       <h1 class="f2 tc">+3M<br>users</h1>
       <h1 class="f2 tc">+20<br>countries</h1>
       <h1 class="f2 tc">+200<br>integrations</h1>
   </section>
 
-  <section class="container mb6">
+  <section class="container mb6 will-animate">
     <div class="mp-banner-cta bg-secondary-gradient pa4 gueno-br relative smooth-t">
-      <div class="relative z-2">
+      <a href="#" class="relative db z-2 no-deco">
         <h1 class="tc white f1">Ready to begin?<br>Let's talk</h1>
         <div class="flex justify-center items-center mt3">
-          <a href="#" class="main-cta bg-white no-deco tc m-auto">
+          <div class="main-cta bg-white no-deco tc m-auto">
             <p class="main-dark-color tc">Read our docs</p>
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
       <div class="absolute-cover bg-main-gradient o-0 smooth-t bg-center no-repeat smooth-t gueno-br"></div>
 
       <div class="absolute-cover bg-center no-repeat smooth-t">
@@ -194,32 +110,6 @@
 </main><!-- #main & End Barba Container-->
 
 <?php get_footer();?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

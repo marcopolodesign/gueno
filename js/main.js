@@ -5,6 +5,30 @@ let header = document.querySelector('header')
 const runScripts = () => {
   pageName = document.querySelector('[data-barba=container]');
 
+  const animatePosts = () => {
+
+    let posts = Array.prototype.slice.call(pageName.children);
+    console.log(posts);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio >= 0.13) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      },
+      {
+        threshold: [0.5, 0.4, 0],
+      }
+    );
+
+    posts.forEach((post) => {
+      observer.observe(post);
+    });
+  }
+
+
   function googleAnalytics() {
     gtag('event', 'page_view', {
       page_location: 'https://art.mirandabosch.com',
@@ -20,9 +44,11 @@ const runScripts = () => {
 
   const initScripts = () => {
     if (pageName.classList.contains('home')) {
-      // postAnimations();
+      animatePosts();
     }
   };
+
+  initScripts();
 };
 
 
@@ -67,7 +93,7 @@ const moreAnchors = () => {
 const instagram = () => {
   let fields = 'id,username, media_type, media_url, timestamp, permalink, comments'
 
-  const accessToken = 'IGQVJVV2haaUV3dHJLV3FEVXRIa2VTRTZAVMWtpblp5RnlmLTFLam1KX1dQQ01raUw2a251QVprSWJybmw4b3d0b2taMG0zUzZAIZA0puOXVjaUFzaEpmWk1ydFB3b2I0VU4wang5THNMaVBqLTZA6cUhubAZDZD';
+  const accessToken = 'IGQVJYRUV6SVFpazJpNHlBS3QxaEZAFcExLNTVTRXRuWTEyeFZANLXpVQ1NmSDQ5LWpzMGNXbWlnVUdDVFUzS1FzNmZAfbHVJUF8teGc0QlNkZAXVmQVdVZAUs1WGNvYTZAENHFGNWt0RzdVdWZAqckxZAb0pWYgZDZD';
 
 
   const superHiApi = `https://api.superhi.com/api/test/token/instagram?access_token=${accessToken}`
@@ -99,24 +125,23 @@ const instagram = () => {
       .then((data) => {
         sectionTag.innerHTML = '';
         data.data.slice(0, 5).forEach((post) => {
-          if (post.media_type === "VIDEO") {
-            sectionTag.innerHTML =
-              sectionTag.innerHTML +
-              `<div class="flex flex-column">
-            <a rel="noreferrer noopener" class="relative w-100" target="_blank" href="${post.permalink}">
-            <video preload="true" autoplay="true" muted="true" loop="true" src="${post.media_url}"></video>
-            </a>
-          </div>`;
-          } else {
-            sectionTag.innerHTML =
-              sectionTag.innerHTML +
-              `<div class="flex flex-column">
-                <a class="relative w-100" target="_blank" href="${post.permalink}">
-              <div class='absolute-cover cover no-repeat bg-center' style='background-image: url("${post.media_url}")'></div>
-              </a>
-            </div>
-          `;
-          }
+          sectionTag.innerHTML =
+            sectionTag.innerHTML +
+            `<div class="flex flex-column">
+                         <a class="relative w-100" target="_blank" href="${post.permalink}">
+                           <div class='absolute-cover cover no-repeat bg-center' style='background-image: url("${post.media_url}")'></div>
+                         </a>
+                         <div class="justify-between ig-aob pa3 dn">
+                           <div class="flex items-center">
+                             <img src="/wp-content/uploads/2020/02/heart-ig-icon.svg">
+                             <p class="ml2">${''}</p>
+                           </div>
+                           <div class="flex items-center">
+                             <img src="/wp-content/uploads/2020/02/comments-ig-icon.svg"><p class="ml2">${''}</p>
+                           </div>
+                         </div>
+                       </div>
+                   `;
         });
 
         setTimeout(() => {
@@ -124,11 +149,6 @@ const instagram = () => {
           document.querySelectorAll('.instagram-feed div a').forEach((post) => {
             post.style.height = width + 'px';
           });
-
-          document.querySelectorAll('.instagram-feed div video').forEach((post) => {
-            post.style.height = width + 'px';
-          });
-
         }, 1000);
         window.addEventListener('resize', () => {
           width = document.querySelector('.instagram-feed div a').clientWidth;
@@ -136,19 +156,14 @@ const instagram = () => {
           document.querySelectorAll('.instagram-feed div a').forEach((post) => {
             post.style.height = width + 'px';
           });
-
-          document.querySelectorAll('.instagram-feed div video').forEach((post) => {
-            post.style.height = width + 'px';
-          });
-
         });
       });
   }
+
   getGram()
 };
 
-// instagram();
-
+instagram();
 
 barba.init({
   timeout: 5000,
@@ -245,3 +260,24 @@ setInterval(() => {
   })
 }, 5000);
 
+
+const animateHome = () => {
+  let subtitle = Array.prototype.slice.call(document.querySelector('.home-starter').children);
+
+  // subtitle.shift();
+
+  let landingTL = gsap.timeline({
+    defaults: {
+      easing: Expo.EaseOut,
+      duration: .25,
+
+    },
+  });
+
+  landingTL
+    .set(subtitle, { y: 30, opacity: 0 })
+    .to(subtitle, { y: 0, opacity: 1, stagger: 0.1 }, 1);
+
+}
+
+animateHome();
