@@ -23,6 +23,7 @@
 
 .big-gradient.second {
   animation: bounce 5s linear infinite both;
+  animation-delay: 1s;
 }
 
 @keyframes bounce {

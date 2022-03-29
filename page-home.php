@@ -60,27 +60,8 @@
 
   <?php get_template_part('template-parts/reusable-content'); ?>
 
-  <section class="mp-text-image mt5 flex jic column-reverse-mobile container-left will-animate">
-    <div class="w-40-ns">
-      <p class="f6">ONE API. +20 COUNTRIES</p>
-      <h1 class="f1 mt3 mb2">Designed by and for developers</h1>
-      <p class="lh-copy measure-wide">Nos sacrificamos para que sus equipos no necesiten unir sistemas dispares o pasar meses integrando las funcionalidades y pagos.</p>
-      <a class="main-cta flex has-gradient mt4">
-        <p>Read our docs</p>
-      </a>
-    </div>
-
-    <div class="w-50-ns flex bg-main-gradient pv5-ns">
-      <img class="pa5" src="/wp-content/uploads/2022/03/Screen-Shot-2022-03-21-at-13.46-1.png" class="m-auto">
-    </div>
-  </section>
 
 
-  <section class="mp-data-numbers flex jic container mv6 will-animate">
-      <h1 class="f2 tc">+3M<br>users</h1>
-      <h1 class="f2 tc">+20<br>countries</h1>
-      <h1 class="f2 tc">+200<br>integrations</h1>
-  </section>
 
   <section class="container mb6 will-animate">
     <div class="mp-banner-cta bg-secondary-gradient pa4 gueno-br relative smooth-t">

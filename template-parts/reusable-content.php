@@ -66,12 +66,36 @@
       </div>
     </section>
 
-  <?php elseif( get_row_layout() == 'text_image' ): ?>
+  <?php elseif( get_row_layout() == 'text_image' ): 
+
+    $isReverse = get_sub_field('reverse'); 
+    $container = "";
+    if ($isReverse): 
+      $isReverse = 'row-reverse'; 
+    endif; ?>
+
+    <section class="mp-text-image mt5 flex jic column-reverse-mobile will-animate <?php echo $isReverse; echo $container; ?>">
+      <div class="w-40-ns m-auto">
+        <?php the_sub_field('text'); ?>
+       
+        <a href="#" class="main-cta flex has-gradient mt4 no-deco">
+          <p>Read our docs</p>
+        </a>
+      </div>
+
+      <div class="w-50-ns flex bg-main-gradient pv5-ns" style="background: <?php the_sub_field("image_bg");?>">
+        <img class="pa5" src="<?php the_sub_field('image');?>" class="m-auto">
+      </div>
+    </section>
 
 
   <?php elseif( get_row_layout() == 'numbers' ): ?>
 
-
+    <section class="mp-data-numbers flex jic container mv6 will-animate">
+    <?php if( have_rows('number_item') ): while ( have_rows('number_item') ) : the_row();?>
+     <h1 class="f2 tc"><?php the_sub_field('number'); echo '<br>' ; the_sub_field('concept');?></h1>
+    <?php endwhile; endif; ?>
+    </section>
 
 <?php endif; endwhile; endif; wp_reset_postdata(); ?>
 
