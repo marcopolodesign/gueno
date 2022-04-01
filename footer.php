@@ -44,48 +44,31 @@
 						Hecho con ❤ en y para LatAm!
 					</h2>
 				</div>
-				<div class="footer-nav-1 nav ml3 pr3">
-					<ul>
-						<li>
-							<a>Crypto Compliance</a>
-						</li>
-						<li>
-							<a>Contact Us 📩</a>
-						</li>
-						<li>
-							<a>Message Us 📲</a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer-nav-2 nav ml3 pr3">
-					<ul>
-						<li>
-							<a>Nosotros</a>
-						</li>
-						<li>
-							<a>Blog 📖</a>
-						</li>
-						<li>
-							<a>Estamos contratando!</a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer-social w-10-ns">
-					<ul class="flex flex-column justify-between h-100 list-none items-stretch ml3">
-						<li>
-							<a>IN</a>
-						</li>
-						<li>
-							<a>TWT</a>
-						</li>
-						<li>
-							<a>IG</a>
-						</li>
-						<li>
-							<a>TY</a>
-						</li>
-					</ul>
-				</div>
+		
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-2',
+						'menu_id'        => 'footer-left-menu',
+						'container' => 'ul',
+						'menu_class' => 'footer-nav-1 nav ml3 pr3 flex flex-column jic list-none',
+					) );
+				
+					wp_nav_menu( array(
+						'theme_location' => 'menu-3',
+						'menu_id'        => 'footer-left-2-menu',
+						'container' => 'ul',
+						'menu_class' => 'footer-nav-2 nav ml3 pr3 flex flex-column jic list-none',
+					) );
+					
+
+					wp_nav_menu( array(
+						'theme_location' => 'menu-4',
+						'menu_id'        => 'footer-social-menu',
+						'container' => 'ul',
+						'menu_class' => 'footer-social w-10-ns ml3 flex flex-column jic list-none items=stretch',
+					) );
+					
+					?>
 		</div>
 
 		<div class="pv4 flex jic">

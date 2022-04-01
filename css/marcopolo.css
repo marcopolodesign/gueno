@@ -83,6 +83,10 @@ div > img {
 
 /* Cursor styles */
 
+a, .anchor {
+  cursor: none;
+}
+
 .cursor {
   position: absolute;
   top: 50%;
@@ -99,7 +103,7 @@ div > img {
 }
 
 .cursor.red {
-  background-color: #911716;
+  background-color: var(--mainDarkColor);
 }
 
 .cursor.black {
@@ -110,7 +114,7 @@ div > img {
   width: 30px;
   height: 30px;
   opacity: 0.7;
-  background-color: var(--red);
+  background-color: var(--mainDarkColor);
 }
 
 .cursor.is-shop {
@@ -1266,6 +1270,146 @@ span.white {
 .social-sharer button:hover span {
   opacity: 1;
 }
+
+
+
+/* Start Contact */
+
+.contact-form-container {
+  z-index: 99999;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.contact-content > div {
+  border-bottom: 0px;
+}
+
+.contact-bg {
+  background-color: rgba(255, 255, 255, 0.76);
+}
+
+
+
+.contacto-eki-form input,
+div.wpforms-container-full .wpforms-form textarea.wpforms-field-medium {
+  background-color: unset !important;
+  border: 0px !important;
+  border-radius: 0px !important;
+  max-width: 100% !important;
+  padding-left: 20px !important;
+  border-radius: 2px;
+}
+
+/* div.wpforms-container-full .wpforms-form textarea.wpforms-field-medium {
+  border: 1px solid white !important;
+  border-top: 0px !important;
+  border-right: 0px !important;
+  margin-top: 10px !important;
+  color: white !important;
+} */
+
+ul#wpforms-100-field_3 {
+  margin-top: 10px !important;
+}
+
+.contacto-eki-form .wpforms-field {
+  margin-bottom: 20px !important;
+}
+
+.contacto-eki-form label {
+  padding-left: 0px !important;
+  padding-top: 5px !important;
+  font-weight: 300 !important;
+  margin-bottom: 0px !important;
+  color: white !important;
+}
+
+.contacto-eki-form input {
+  padding-top: 0px !important;
+  padding-left: 0px !important;
+  border-bottom: 1px solid white !important;
+  color: white !important;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field:last-child {
+  padding-bottom: 0 !important;
+}
+
+div.wpforms-container-full {
+  margin-bottom: 0px !important;
+  position: relative !important;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-submit-container {
+  position: absolute !important;
+  right: 0 !important;
+  border: 0px !important;
+  width: 100% !important;
+}
+
+div.wpforms-container-full .wpforms-form button[type='submit'] {
+  background: var(--mainDarkColor) !important;
+  font-family: var(--everett) !important;
+  color: #fff !important;
+  border: 0px !important;
+  width: 100% !important;
+}
+
+.wpforms-field-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.wpforms-field-container > div {
+  width: 100% !important;
+}
+
+.wpforms-field-container > div:not(:last-child) {
+  /* width: 50% !important; */
+  padding-bottom: 0 !important;
+}
+
+.wpforms-field-container > div:nth-child(even) {
+  /* border-left: 1px solid var(--darkBlue) !important; */
+}
+
+.wpforms-field-container > div:last-child {
+  border-left: 0px solid var(--darkBlue) !important;
+}
+
+.contact-content {
+  overflow: scroll;
+  height: 100vh;
+}
+
+.contact-pop-info h1 {
+  margin-top: 20px;
+}
+
+
+.contact-pop-container input, .contact-pop-container textarea, div.wpforms-container-full .wpforms-form textarea.wpforms-field-medium {
+  background-color: rgba(255, 255, 255, 0.50) !important;
+  border-radius: 6px !important;
+  border: 0px !important;
+  transition: var(--smooth);
+}
+
+
+.contact-pop-container input:hover {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.contact-pop-container input.visited, div.wpforms-container-full .wpforms-form textarea.visited {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+
+
+.contact-pop-container input:active, .contact-pop-container input:visited, .contact-pop-container input:focus, .contact-pop-container input:focus-within, .contact-pop-container input:focus-visible, .contact-pop-container textarea:active, .contact-pop-container textarea:visited, .contact-pop-container textarea:focus, .contact-pop-container textarea:focus-within, .contact-pop-container textarea:focus-visible  {
+  background-color: rgb(255, 255, 255) !important; 
+}
+
 
 .mobile {
   display: none;

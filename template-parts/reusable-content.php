@@ -93,7 +93,11 @@
 
     <section class="mp-data-numbers flex jic container mv6 will-animate">
     <?php if( have_rows('number_item') ): while ( have_rows('number_item') ) : the_row();?>
-     <h1 class="f2 tc"><?php the_sub_field('number'); echo '<br>' ; the_sub_field('concept');?></h1>
+    <div class="flex flex-column jic">
+      <h1 class="f0 tc main-color"><?php the_sub_field('number');?></h1>
+     <h2 class="ml4 tc f4"><?php the_sub_field('concept');?></h2>
+    </div>
+  
     <?php endwhile; endif; ?>
     </section>
 

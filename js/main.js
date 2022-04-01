@@ -41,59 +41,105 @@ const runScripts = () => {
     fbq('track', 'PageView');
   }
 
+  function allCursor() {
+    let cursor = document.querySelector('.cursor');
+    let allAnchors = Array.prototype.slice.call(document.querySelectorAll('a'));
+    let extraAnchors = Array.prototype.slice.call(document.querySelectorAll('.anchor'));
+
+    let anchors = allAnchors.concat(extraAnchors);
+
+    let anchorContainer = document.querySelectorAll('.main-cta');
+
+    const changeCursorColor = () => {
+      anchorContainer.forEach((container) => {
+        const color = container.getAttribute('cursor-color');
+
+        if (color === 'red') {
+          cursor.classList.remove('black');
+          cursor.classList.add('red');
+        } else if (color === 'black') {
+          cursor.classList.remove('red');
+          cursor.classList.add('black');
+        }
+      });
+    };
+
+    const growCursor = () => {
+      cursor.classList.add('is-down');
+    };
+
+    const shrinkCursor = () => {
+      cursor.classList.remove('is-down');
+    };
+
+    const hoverCursor = () => {
+      cursor.classList.add('is-hover');
+    };
+
+    const removeHoverCursor = () => {
+      cursor.classList.remove('is-hover');
+    };
+
+    document.addEventListener('mousedown', () => {
+      growCursor();
+    });
+
+    anchors.forEach((anchor) => {
+      anchor.addEventListener('mouseover', () => {
+        hoverCursor();
+      });
+    });
+
+    anchors.forEach((anchor) => {
+      anchor.addEventListener('mouseleave', () => {
+        removeHoverCursor();
+      });
+    });
+
+    document.addEventListener('mouseup', () => {
+      shrinkCursor();
+    });
+
+    const moveCursor = (x, y) => {
+      cursor.style.top = y + 'px';
+      cursor.style.left = x + 'px';
+      changeCursorColor();
+    };
+
+    document.addEventListener('mousemove', (event) => {
+      moveCursor(event.pageX, event.pageY);
+    });
+
+    document.addEventListener('scroll', (event) => {
+      moveCursor(event.pageX, event.pageY);
+    });
+  }
+
+
+
+
 
   const initScripts = () => {
     if (pageName.classList.contains('home')) {
       animatePosts();
     }
+
+    setTimeout(() => {
+      allCursor();
+    }, 3000);
   };
 
   initScripts();
 };
 
 
-const moreAnchors = () => {
-  let cursor = document.querySelector('.cursor');
-  let newAnchors = Array.prototype.slice.call(document.querySelectorAll('.anchors'));
-  let newA = Array.prototype.slice.call(document.querySelectorAll('a'));
-  anchors = allAnchors.concat(newAnchors);
-  anchors = allAnchors.concat(newA);
 
-  const hoverCursor = () => {
-    console.log('move!');
-    cursor.classList.add('is-hover');
-  };
-
-  const removeHoverCursor = () => {
-    cursor.classList.remove('is-hover');
-    cursor.classList.remove('is-shop');
-    cursor.classList.remove('add-cart');
-  };
-
-  anchors.forEach((anchor) => {
-    anchor.addEventListener('mouseover', () => {
-      if (anchor.classList.contains('is-shoppable')) {
-        cursor.classList.add('is-shop');
-      } else if (anchor.classList.contains('single_add_to_cart_button')) {
-        cursor.classList.add('add-cart');
-      } else {
-        hoverCursor();
-      }
-    });
-  });
-
-  anchors.forEach((anchor) => {
-    anchor.addEventListener('mouseleave', () => {
-      removeHoverCursor();
-    });
-  });
-};
 
 
 const instagram = () => {
   let fields = 'id,username, media_type, media_url, timestamp, permalink, comments'
 
-  const accessToken = 'IGQVJYRUV6SVFpazJpNHlBS3QxaEZAFcExLNTVTRXRuWTEyeFZANLXpVQ1NmSDQ5LWpzMGNXbWlnVUdDVFUzS1FzNmZAfbHVJUF8teGc0QlNkZAXVmQVdVZAUs1WGNvYTZAENHFGNWt0RzdVdWZAqckxZAb0pWYgZDZD';
+  const accessToken = 'IGQVJXLXVkeW1HVGo5dzl0My1EUDJUZAGVmMGt0d21EYkFDMHNMclZA1UzVXcm9iZAWNoQk00blBBMEpzdVNmc0NXcjlCX0dCY09ubk4xeVI3a2tPRUI2UzNsVVBiTWExdURaWFhBMGdJak5lcG9vbWprRAZDZD';
 
 
   const superHiApi = `https://api.superhi.com/api/test/token/instagram?access_token=${accessToken}`
@@ -281,3 +327,72 @@ const animateHome = () => {
 }
 
 animateHome();
+
+
+const contact = () => {
+  let hrefs = document.querySelectorAll('a');
+  hrefs.forEach((a) => {
+    if (a.href.indexOf('#contact') > -1) {
+      a.classList.add('barba-prevent');
+      console.log(a)
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        let timeline = gsap.timeline({
+          defaults: {
+            easing: Expo.EaseOut,
+            duration: 0.5,
+          },
+        });
+
+        timeline
+          .set(container, { pointerEvents: 'all', opacity: 1 })
+          .set(contact, { x: '100%' })
+          .set(bg, { opacity: 0 })
+          .to(contact, { x: '0' }, 0)
+          .to(bg, { opacity: 1 }, 0.4);
+      });
+    }
+  });
+  let close = document.querySelector('#close-contact');
+  let bg = document.querySelector('.contact-bg');
+  let contact = document.querySelector('.contact-content');
+  let container = document.querySelector('.contact-form-container');
+
+  close.addEventListener('click', () => {
+    let timeline = gsap.timeline({
+      defaults: {
+        easing: Expo.EaseOut,
+        duration: 0.5,
+      },
+    });
+
+    timeline
+      .set(container, { pointerEvents: 'none' })
+      .to(contact, { x: '100%' })
+      .to(bg, { opacity: 0 }, 0);
+  });
+};
+setTimeout(() => {
+  contact();
+}, 2000);
+
+
+
+const visitedInputs = () => {
+  let inputs = Array.prototype.slice.call(document.querySelectorAll('.contact-pop-container input'));
+  let textarea = document.querySelector('.contact-pop-container textarea');
+
+  inputs.push(textarea);
+
+  inputs.forEach(input => {
+    console.log(input);
+    input.addEventListener("change", (e) => {
+      e.target.classList.add('visited');
+      console.log(input)
+    })
+  })
+}
+
+
+visitedInputs();

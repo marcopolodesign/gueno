@@ -7,9 +7,9 @@
         <a class="main-cta has-gradient w-max center">
           <p>Start now for Free</p>
         </a>
-        <a class="main-cta bg-grey mt3 w-max center">
+        <!-- <a class="main-cta bg-grey mt3 w-max center">
           <p class="white">Crypto compliance in Latam &#128640;</p>
-        </a>
+        </a> -->
       </div>
     </div>
 

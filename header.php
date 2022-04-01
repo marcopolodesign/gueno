@@ -31,20 +31,34 @@
 				<p>GUENO</p>
 			</div>
 
-			<div class="header-nav flex jic">
-				<a>
+		
+
+				<nav>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'header-left-menu',
+						'container' => 'ul',
+						'menu_class' => 'header-nav w-max ml-auto mr-0 flex jic list-none',
+					) );
+					?>
+				</nav>
+
+				<!-- <a>
 					<p>Crypto Compliance</p>
 				</a>
 				<a class="mh3 main-cta bg-main-color">
 					<p>Contact Sales</p>
 				</a>
-				<a><?php get_template_part('template-parts/content/insta-icon');?></a>
-			</div>
+				<a><?php get_template_part('template-parts/content/insta-icon');?></a> -->
+		
 
 	</header><!-- #masthead -->
 
 	<div class="cursor"></div>
 	<div class="pre-load bg-main-color"></div>
 	<div class="pre-load bg-white"></div>
+
+	<?php get_template_part('template-parts/contact'); ?>
 
 	<div data-barba="wrapper">

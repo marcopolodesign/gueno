@@ -116,12 +116,22 @@ img.icon {
   transition: var(--smooth)
 }
 
-.header-nav a.main-cta {
+
+.header-nav li.main-cta { 
   padding-bottom: 10px !important;
 }
 
-.header-nav a.main-cta:after {
+.header-nav li.main-cta a {
+  color: #fff;
+  padding-bottom: 0;
+}
+
+.header-nav li.main-cta a:after {
   content: unset;
+}
+
+.header-nav li.main-cta:hover a {
+  color: var(--mainDarkColor)
 }
 
 .main-cta.has-gradient {
@@ -159,39 +169,53 @@ img.icon {
   border-bottom: 1px solid #000;
 }
 
-.footer-inner > div:not(:last-child) {
+.footer-inner > div:not(:last-child), .footer-inner > ul:not(:last-child) {
   flex: 1 1 0px;
   border-right: 1px solid #000;
 }
 
-.footer-inner .nav ul {
+.footer-inner .nav ul, .footer-inner ul.nav  {
   list-style-type: none;
 }
 
-.footer-inner .nav ul li:not(:first-child) {
+.footer-inner .nav ul li:not(:first-child),  .footer-inner  ul.nav li:not(:first-child) {
   border-top: 1px solid #000;
 
 }
 
-.footer-inner .nav ul li {
+.footer-inner .nav ul li, .footer-inner  ul.nav li {
   padding: 30px 5px;
   display: flex;
+  width: 100%;;
 }
 
-.footer-inner .nav ul li a {
+.footer-inner .nav ul li a, .footer-inner  ul.nav li a {
   font-size: 30px;
   display: inline-flex;
   margin: auto;
+  text-decoration: none;
+  color: #000;
+  transition: var(--smooth);
+
 }
+
+
+.footer-inner .nav ul li a:hover, .footer-inner  ul.nav li a:hover {
+  color: var(--mainColor);
+}
+
 
 .footer-social li {
   padding: 10px 0px;
   display: flex;
   height: 100%;
+  width: 100%;
 }
 
 .footer-social li a {
   margin: auto;
+  text-decoration: none;
+  color: black
 }
 
 .footer-social li:not(:first-child) {
