@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main id="main" data-barba="container" data-barba-namespace="home" class="home no-mt" bg-color="white">
-  <section class="relative mt5">
+  <section class="relative mt5 overflow-x-hidden">
     <div class="container home-starter">
       <?php the_field('home_starter');?>
       <div class="home-cta-starters mt3 flex flex-column justify-center w-100 align-center">
@@ -11,10 +11,13 @@
           <p class="white">Crypto compliance in Latam &#128640;</p>
         </a> -->
       </div>
-    </div>
-
-    <?php get_template_part('template-parts/content/home-gradients'); ?>
+    </div>    
   </section>
+
+<div class="absolute top-0 left-0 w-100 h-100 pointers-none overflow-x-hidden">
+  <div class="absolute w-100 h-30 gradients-container left-0 bottom-0"></div>
+  <?php get_template_part('template-parts/content/home-gradients'); ?>
+</div>
 
   <section class="map-container will-animate">
     <div class="map-content relative mt5 ">
@@ -46,7 +49,7 @@
         </div>
       </div>
       
-      <img style="max-width: 50vw" class="db center" src="/wp-content/uploads/2022/03/map-test-gueno.png">
+      <img style="max-width: 50vw" class="db center" src="/wp-content/uploads/2022/03/map-gueno.png">
 
       <div class="map-texture-1 absolute top-0">
         <?php get_template_part('template-parts/content/map-texture-1'); ?>
@@ -151,7 +154,7 @@
     flex: 1;
 }
 .code-ui-snippet-text {
-    white-space: nowrap;
+    /* white-space: nowrap; */
     color: #fff;
 }
 .text-primary-2 {

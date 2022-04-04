@@ -46,7 +46,7 @@
   <?php elseif( get_row_layout() == 'items' ): ?>
     <section class="bg-white relative z-5 w-100 pv6 mp-items-container container relative will-animate">
       <div class="mp-items-inner-c z-5">
-      <?php the_sub_field('items_title');?>
+       <?php the_sub_field('items_title');?>
     
 
         <div class="mp-items-inner flex column-mobile justify-between items-stretch mt5">
@@ -60,7 +60,7 @@
           <?php endwhile; endif; ?>
       </div>
 
-      <div class="absolute top-0 mp-items-bg z--1 flex align-center">
+      <div class="absolute top-0 mp-items-bg z--1 flex align-center w-100 left-0">
         <?php get_template_part('template-parts/content/gradient-bg'); ?>
       </div>
       </div>
@@ -77,10 +77,21 @@
     <section class="mp-text-image mt5 flex jic column-reverse-mobile will-animate <?php echo $isReverse; echo $container; ?>">
       <div class="w-40-ns m-auto">
         <?php the_sub_field('text'); ?>
+
+
+        <?php 
+          $link = get_sub_field('cta');
+          if( $link ): 
+              $link_url = $link['url'];
+              $link_title = $link['title'];
+              $link_target = $link['target'] ? $link['target'] : '_self';
+              ?>
+               <a href="<?php echo esc_url( $link_url ); ?>" class="main-cta flex has-gradient mt4 no-deco">
+                <p><?php echo esc_html( $link_title ); ?></p>
+              </a>
+        <?php endif; ?>
        
-        <a href="#" class="main-cta flex has-gradient mt4 no-deco">
-          <p>Read our docs</p>
-        </a>
+       
       </div>
 
       <div class="w-50-ns flex bg-main-gradient pv5-ns" style="background: <?php the_sub_field("image_bg");?>">
@@ -91,15 +102,73 @@
 
   <?php elseif( get_row_layout() == 'numbers' ): ?>
 
-    <section class="mp-data-numbers flex jic container mv6 will-animate">
-    <?php if( have_rows('number_item') ): while ( have_rows('number_item') ) : the_row();?>
-    <div class="flex flex-column jic">
-      <h1 class="f0 tc main-color"><?php the_sub_field('number');?></h1>
-     <h2 class="ml4 tc f4"><?php the_sub_field('concept');?></h2>
-    </div>
-  
-    <?php endwhile; endif; ?>
+    <section class="mp-data-numbers flex column-mobile jic container mv6 will-animate">
+      <?php if( have_rows('number_item') ): while ( have_rows('number_item') ) : the_row();?>
+      <div class="flex flex-column jic">
+        <h1 class="f0 tc main-color"><?php the_sub_field('number');?></h1>
+      <h2 class="ml4 tc f4"><?php the_sub_field('concept');?></h2>
+      </div>
+    
+      <?php endwhile; endif; ?>
     </section>
+
+    <?php elseif( get_row_layout() == 'text_image_full_screen_image' ): 
+
+      $isReverse = get_sub_field('reverse'); 
+          $container = "";
+          if ($isReverse): 
+            $isReverse = 'column-reverse'; 
+      endif; ?>
+
+
+    <div class="mp-block-full-image-text mv6 container flex flex-column <?php echo $isReverse;?>">
+      <?php the_sub_field('text');?>
+      <?php $link = get_sub_field('cta');
+        if( $link ): 
+          $link_url = $link['url'];
+          $link_title = $link['title'];
+          $link_target = $link['target'] ? $link['target'] : '_self';
+          ?>
+            <a href="<?php echo esc_url( $link_url ); ?>" class="main-cta has-gradient mt4 no-deco w-max center mt3">
+            <p><?php echo esc_html( $link_title ); ?></p>
+          </a>
+        <?php endif; ?>
+
+      <?php if (get_sub_field('image')): ?>
+       <img class="mt4" src="<?php the_sub_field('image');?>">
+      <?php endif; ?>
+    </div>
+
+
+    <?php elseif( get_row_layout() == 'full_screen_image' ): ?>
+
+    <div class="mp-block-full-image mv6 container">
+      <img src="<?php the_sub_field('image');?>">
+    </div>
+
+
+    <?php elseif( get_row_layout() == 'page_starter' ): ?>
+
+
+    <section class="relative mt5">
+      <div class="container home-starter">
+        <?php the_sub_field('text');?>
+        <div class="home-cta-starters mt3 flex flex-column justify-center w-100 align-center">
+        <?php $link = get_sub_field('cta');
+        if( $link ): 
+          $link_url = $link['url'];
+          $link_title = $link['title'];
+          $link_target = $link['target'] ? $link['target'] : '_self';
+          ?>
+            <a href="<?php echo esc_url( $link_url ); ?>" class="main-cta has-gradient mt4 no-deco w-max center mt3">
+            <p><?php echo esc_html( $link_title ); ?></p>
+          </a>
+        <?php endif; ?>
+        </div>
+      </div>
+    </section>
+
+
 
 <?php endif; endwhile; endif; wp_reset_postdata(); ?>
 

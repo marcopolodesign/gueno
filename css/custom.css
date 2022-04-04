@@ -1,7 +1,9 @@
 :root {
- --mainColor: #66CA70;
+ --mainColor: #86ff2e;
  --mainLightColor: "";
- --mainDarkColor: #1E3256;
+ /* --mainDarkColor: #1E3256; */
+ --mainDarkColor: #2B349e;
+ --mainDarkColorII: #3a1e58;
  --mainGradient: linear-gradient(91.51deg, #85E38E -5.56%, #60BCC9 103.73%);
  --secondaryGradient: linear-gradient(91.51deg, #85E38E -5.56%, #8977D4 36.52%, #60BCC9 103.73%);
  --grey: #AAAAAA;
@@ -37,6 +39,11 @@
 
 body {
   font-family: var(--mainFont);
+}
+
+.gradients-container {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 33.01%, #FFFFFF 99.74%);
+  height: 30%;
 }
 
 /* ADD TO MP.CSS later */
@@ -142,6 +149,21 @@ img.icon {
 .main-cta.has-gradient > *, .main-cta.bg-main-color > * {
   color: #fff;
 }
+
+.main-cta.bg-main-color > *, .main-cta.bg-main-color {
+  color: #000 !important;
+}
+
+
+.main-cta.bg-main-color:hover {
+  background-color: var(--mainDarkColorII) !important;
+  color: var(--mainColor) !important;
+}
+
+.main-cta.bg-main-color:hover > *  {
+  color: var(--mainColor) !important;
+}
+
 
 .main-cta > * {
   margin: auto;
@@ -412,4 +434,76 @@ img.icon {
   width: 130px !important;
   height: auto !important;
   margin: auto;
+}
+
+
+/* Start Mobile */
+
+
+@media (max-width: 768px) {
+
+  .desktop, .map-texture-1, .map-texture-2 {
+    display: none;
+  }
+
+.map-content {
+  flex-direction: column-reverse;
+  display: flex;
+}
+
+
+.map-content >div:first-child {
+  position: initial;
+  transform: scale(0.85) translateY(-80%) !important;
+  margin-bottom: -100px;
+}
+
+.map-content img {
+  max-width: 100% !important;
+}
+
+.card-content >div:first-child {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
+
+.card-content >div:first-child h2{
+  margin-bottom: 10px;
+}
+
+.card:not(:first-child) {
+  margin-top: -380px;
+}
+
+.mp-item {
+  margin-bottom: 30px;
+}
+
+.mp-items-bg {
+  top: -13%;
+}
+
+.mp-items-bg > * {
+  width: 100%;
+}
+
+.mp-text-image > div:first-child {
+  padding: 20px;
+}
+
+.mp-data-numbers > div {
+  margin-bottom: 35px
+}
+
+.mp-data-numbers > div h1{
+  font-size: 75px
+}
+
+/* Footer Mobile */
+
+.footer-inner > div:not(:last-child), .footer-inner > ul:not(:last-child) {
+  border-right: 0px;;
+}
+
+
 }

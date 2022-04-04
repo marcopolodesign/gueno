@@ -42,17 +42,7 @@
 						'menu_class' => 'header-nav w-max ml-auto mr-0 flex jic list-none',
 					) );
 					?>
-				</nav>
-
-				<!-- <a>
-					<p>Crypto Compliance</p>
-				</a>
-				<a class="mh3 main-cta bg-main-color">
-					<p>Contact Sales</p>
-				</a>
-				<a><?php get_template_part('template-parts/content/insta-icon');?></a> -->
-		
-
+				</nav>		
 	</header><!-- #masthead -->
 
 	<div class="cursor"></div>
