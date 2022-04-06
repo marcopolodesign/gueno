@@ -1,6 +1,6 @@
 :root {
  --mainColor: #86ff2e;
- --mainLightColor: "";
+ --mainLightColor: #E5FFD2;
  /* --mainDarkColor: #1E3256; */
  --mainDarkColor: #2B349e;
  --mainDarkColorII: #3a1e58;
@@ -340,6 +340,28 @@ img.icon {
 
 .card:hover .card-inner-bg {
   background-color: var(--mainDarkColor) !important;
+}
+
+.card-bg-img {
+  left: unset;
+  right: 0;
+  overflow: hidden;
+}
+
+.card-bg-img svg {
+  width: 70%;
+  transform: translate(50%, 20%);
+  opacity: .5;
+}
+
+.card-bg-img svg path {
+  /* fill: var(--mainDarkColorII); */
+  stroke: var(--mainDarkColorII);
+  transition: var(--smooth)
+}  
+
+.card:hover svg path {
+  stroke: var(--mainLightColor) !important  ;
 }
 
 

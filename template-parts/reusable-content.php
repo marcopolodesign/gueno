@@ -2,7 +2,7 @@
 
   if( get_row_layout() == 'logo_gallery' ): ?>
     <section class="home-clients mt5 will-animate mb6">
-        <h2 class="f3 tc mt3 fw3 lh-copy main-color"><?php the_sub_field('title');?></h2>
+        <h2 class="f3 tc mt3 fw3 lh-copy main-dark-color"><?php the_sub_field('title');?></h2>
 
         <div class="logos-container w-50-ns center mt3">
         <?php if( have_rows('logo_container') ): while ( have_rows('logo_container') ) : the_row();
@@ -26,18 +26,26 @@
       <?php if( have_rows('cards') ): while ( have_rows('cards') ) : the_row();?>
       
         <div class="card relative pa4">
-          <div class="card-inner-bg bg-main-color" style="background-color: <?php the_sub_field('card_background');?>"></div>
-          <div class="card-content">
-              <div class="flex jic">
-                <h1 class="main-dark-color f0"><?php the_sub_field('card_title');?></h1>
-                <h2 class="white f2">0<?php echo get_row_index();?>/</h2>
-              </div>
+          <div class="card-inner-bg relative bg-main-color" style="background-color: <?php the_sub_field('card_background');?>"></div>
+            <div class="card-content">
+                <div class="flex jic">
+                  <h1 class="main-dark-color f0"><?php the_sub_field('card_title');?></h1>
+                  <h2 class="white f2">0<?php echo get_row_index();?>/</h2>
+                </div>
 
-              <?php the_sub_field('card_content'); ?>
-            
-          </div>
-        </div>
+                <?php the_sub_field('card_content'); ?>
+              
+            </div>
 
+            <?php if (get_sub_field('card_bg_image')):
+          $shape = get_sub_field('card_bg_image');
+          ?>
+         <div class="absolute-cover card-bg-img" style="">
+           <?php get_template_part('template-parts/content/' . $shape . '');?>
+         </div>
+         <?php endif;?>
+         </div>
+         
         <?php endwhile; endif;?>
       </div>
     </section>
