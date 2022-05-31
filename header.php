@@ -26,7 +26,7 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	
-	<header id="masthead" class="site-header flex jic container pt3">
+	<header id="masthead" class="site-header flex jic container pa4 bg-black-g fixed top-0 left-0 w-100 z-5">
 			<div class="logo">
 				<p>GUENO</p>
 			</div>

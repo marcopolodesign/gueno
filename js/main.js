@@ -209,7 +209,7 @@ const instagram = () => {
   getGram()
 };
 
-instagram();
+// instagram();
 
 barba.init({
   timeout: 5000,

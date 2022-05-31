@@ -13,7 +13,7 @@
 
 	</div> <!-- End Barba Container -->
 
-		<section class="instagram-feed-container mv5 container-xs mb7">
+		<section class="instagram-feed-container mv5 container-xs mb7 dn">
 			<div class="flex jic column-mobile gram-text-container">
 				<a href="http://instagram.com/somosgueno" target="_blank" class="flex m-auto mb4 no-deco">
 					<?php get_template_part('template-parts/content/insta');?>

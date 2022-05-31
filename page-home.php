@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main id="main" data-barba="container" data-barba-namespace="home" class="home no-mt" bg-color="white">
-  <section class="relative mt5 overflow-x-hidden">
+  <section class="relative mt6 overflow-x-hidden">
     <div class="container home-starter">
       <?php the_field('home_starter');?>
       <div class="home-cta-starters mt3 flex flex-column justify-center w-100 align-center">
@@ -15,64 +15,22 @@
   </section>
 
 <div class="absolute top-0 left-0 w-100 h-100 pointers-none overflow-x-hidden">
-  <div class="absolute w-100 h-30 gradients-container left-0 bottom-0"></div>
-  <?php get_template_part('template-parts/content/home-gradients'); ?>
+  <!-- <div class="absolute w-100 h-30 gradients-container left-0 bottom-0"></div> -->
+  <?php // get_template_part('template-parts/content/home-gradients'); ?>
 </div>
 
-  <section class="map-container will-animate">
-    <div class="map-content relative mt5 ">
-      <div class="flex flex-column justify-center items-center absolute-center z-5">
-        <div id="w-node-_79ba1455-8a32-e925-dc52-bf7cf78044f9-9f3e1567" class="code-ui-snippet">
-          <div class="code-ui-snippet-row">
-            <div class="code-row-number">
-              <div>12</div>
-            </div>
-              <div class="code-row-content">
-                <div id="onbording-type" class="code-ui-snippet-text">onboarding ( id:'<span class="text-primary-2">API Pay</span>’)
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="mv3">
-          <?php get_template_part('template-parts/content/user-card'); ?>
-        </div>
-        <div id="w-node-_79ba1455-8a32-e925-dc52-bf7cf78044f9-9f3e1567" class="code-ui-snippet">
-            <div class="code-ui-snippet-row">
-                <div class="code-row-number">
-                  <div>16</div>
-                </div>
-                <div class="code-row-content">
-                  <div class="code-ui-snippet-text">2021-1u-06 15:52:00 [200] payment intent.succeeded ( id: ‘<span class="text-primary-2">API Pay</span>’)
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <img style="max-width: 50vw" class="db center" src="/wp-content/uploads/2022/03/map-gueno.png">
 
-      <div class="map-texture-1 absolute top-0">
-        <?php get_template_part('template-parts/content/map-texture-1'); ?>
-      </div>
-
-      <div class="map-texture-2 absolute bottom-0">
-        <?php get_template_part('template-parts/content/map-texture-1'); ?>
-      </div>
-    </div>
-  </section>
 
   <?php get_template_part('template-parts/reusable-content'); ?>
 
 
-
-
   <section class="container mb6 will-animate">
-    <div class="mp-banner-cta bg-secondary-gradient pa4 gueno-br relative smooth-t">
-      <a href="#" class="relative db z-2 no-deco">
-        <h1 class="tc white f1">Ready to begin?<br>Let's talk</h1>
+    <div class="mp-banner-cta bg-secondary-gradient pa4 gueno-br relative smooth-t overflow-hidden">
+      <a href="#contacto" class="relative db z-2 no-deco">
+        <h1 class="tc white f1">Expand fast,<br>without risk.</h1>
         <div class="flex justify-center items-center mt3">
           <div class="main-cta bg-white no-deco tc m-auto">
-            <p class="main-dark-color tc">Read our docs</p>
+            <p  class="main-dark-color tc">Let's talk</p>
           </div>
         </div>
       </a>
@@ -90,6 +48,9 @@
       </div>
     </div>
   </section>
+ 
+
+
  
 </main><!-- #main & End Barba Container-->
 
