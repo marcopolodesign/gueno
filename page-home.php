@@ -49,7 +49,7 @@
         </div>
       </div>
       
-      <img style="max-width: 50vw" class="db center" src="/wp-content/uploads/2022/04/map-gueno.png">
+      <img style="max-width: 50vw" class="db center" src="/wp-content/uploads/2022/03/map-gueno.png">
 
       <div class="map-texture-1 absolute top-0">
         <?php get_template_part('template-parts/content/map-texture-1'); ?>
@@ -68,11 +68,11 @@
 
   <section class="container mb6 will-animate">
     <div class="mp-banner-cta bg-secondary-gradient pa4 gueno-br relative smooth-t">
-      <a href="#contact" class="relative db z-2 no-deco">
+      <a href="#" class="relative db z-2 no-deco">
         <h1 class="tc white f1">Ready to begin?<br>Let's talk</h1>
         <div class="flex justify-center items-center mt3">
           <div class="main-cta bg-white no-deco tc m-auto">
-            <p class="main-dark-color tc">Get Started</p>
+            <p class="main-dark-color tc">Read our docs</p>
           </div>
         </div>
       </a>
