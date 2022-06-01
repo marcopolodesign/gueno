@@ -28,12 +28,21 @@
     }
 
     .lc-black {
-      color: var(--black)
+      color: #000;
     }
 
     .lc-secondary {
       color: var(--thirdColor)
     }
+
+    .white {
+      color: var(--secondaryColor);
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.82);
+    }
+
     
 }
 
@@ -43,10 +52,13 @@
     --secondaryColor: #C3C3C3;
   }
 
-
-
   .has-secondary, .secondary-color {
     color: var(--secondaryColor)
+  }
+
+  header {
+    background-color: #212121dd;
+    z-index: 99;
   }
 }
 
@@ -174,6 +186,29 @@ img.icon {
   transition: var(--smooth)
 }
 
+header {
+  backdrop-filter: blur(3.5px);
+  z-index: 99;
+  transition: all 0.3s ease;;
+}
+
+header.scrolled {
+  padding:10px 65px;
+}
+
+
+
+.header-nav li a {
+  color: var(--secondaryColor)
+}
+
+.header-nav li:hover a {
+  color: var(--mainColor)
+}
+
+.header-nav a::after {
+  background: var(--mainColor) !important
+}
 
 .header-nav li.main-cta { 
   padding-bottom: 10px !important;
@@ -243,7 +278,7 @@ img.icon {
 }
 
 .footer-inner > div:not(:last-child), .footer-inner > ul:not(:last-child) {
-  flex: 1 1 0px;
+  /* flex: 1 1 0px; */
   border-right: 1px solid #000;
 }
 
@@ -257,19 +292,21 @@ img.icon {
 }
 
 .footer-inner .nav ul li, .footer-inner  ul.nav li {
-  padding: 30px 5px;
-  display: flex;
-  width: 100%;;
+  padding: 10px 5px 0px;
+  display: inline-flex;
+  margin-left: 10px;
 }
 
 .footer-inner .nav ul li a, .footer-inner  ul.nav li a {
-  font-size: 30px;
+  font-size: 16px;
   display: inline-flex;
   margin: auto;
   text-decoration: none;
-  color: #000;
+  color: var(--secondaryColor);
   transition: var(--smooth);
-
+  padding: 10px 17px;
+  background: var(--background);
+border-radius: 8px;
 }
 
 
@@ -288,7 +325,7 @@ img.icon {
 .footer-social li a {
   margin: auto;
   text-decoration: none;
-  color: black
+  color: var(--secondaryColor);
 }
 
 .footer-social li:not(:first-child) {
@@ -296,6 +333,11 @@ img.icon {
 }
 
 /* HOME Desktop */
+
+.gueno-chart {
+  margin-top: 0;
+  padding-top: 0;
+}
 
 .map-content img {
   mix-blend-mode: multiply;

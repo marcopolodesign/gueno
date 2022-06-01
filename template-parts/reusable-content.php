@@ -1,10 +1,10 @@
 <?php if( have_rows('reusable_content') ): while ( have_rows('reusable_content') ) : the_row();
 
   if( get_row_layout() == 'logo_gallery' ): ?>
-    <section class="home-clients mt5 will-animate mb6">
+    <section class="home-clients mv5 will-animate">
         <h2 class="f3 tc mt3 fw3 lh-copy main-color"><?php the_sub_field('title');?></h2>
 
-        <div class="logos-container w-50-ns center mt3">
+        <div class="logos-container w-70-ns center mt3">
         <?php if( have_rows('logo_container') ): while ( have_rows('logo_container') ) : the_row();
           $images = get_sub_field('logo');
           $size = 'full'; // (thumbnail, medium, large, full or custom size)
@@ -44,7 +44,7 @@
 
 
   <?php elseif( get_row_layout() == 'items' ): ?>
-    <section class="relative z-5 w-100 pv6 mp-items-container container relative will-animate">
+    <section class="relative z-5 w-100 pt6 pb3 mp-items-container container relative will-animate">
       <div class="mp-items-inner-c z-5">
        <?php the_sub_field('items_title');?>
     
@@ -53,7 +53,7 @@
         <?php if( have_rows('item') ): while ( have_rows('item') ) : the_row();?>
           <div class="mp-item smooth-t pt4 pb3 pl3 pr4 mh2-ns mb3 w-25-ns h-max">
             <img class="icon db ml-0 mr-auto mb4" src="<?php the_sub_field('icon');?>">
-            <h3 class="f4 black mv2"><?php the_sub_field('title');?></h3>
+            <h3 class="f4 black mv2 fw4"><?php the_sub_field('title');?></h3>
             <?php the_sub_field('text');?>
           </div>
    
@@ -133,13 +133,14 @@
     <?php elseif( get_row_layout() == 'text_image_full_screen_image' ): 
 
       $isReverse = get_sub_field('reverse'); 
+      $aditional = get_sub_field('aditional');
           $container = "";
           if ($isReverse): 
             $isReverse = 'column-reverse'; 
       endif; ?>
 
 
-    <div class="mp-block-full-image-text relative mv5 pv5  flex flex-column <?php echo $isReverse;?>">
+    <div class="mp-block-full-image-text relative mv5 pv5  flex flex-column <?php echo $isReverse; echo $aditional;?>">
     <div class="relative z-2 container">
       <div class="w-60-ns center">
         <?php the_sub_field('text');?>

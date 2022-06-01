@@ -33,15 +33,15 @@
 		
 		</section>
 
-	<footer id="colophon" class="site-footer container-xs">
-		<div class="footer-inner flex column-mobile items-stretch pv3">
-				<div class="footer-location flex flex-column justify-between pr3-ns">
-					<h2 class="f3">📍<br>
+	<footer id="colophon" class="site-footer container-xs bg-black pv4">
+		<div class="footer-inner flex column-mobile items-stretch justify-start pv3">
+				<div class="footer-location flex flex-column justify-between pr3-ns w-30-ns">
+					<h2 class="f4 white">
 						🇺🇸 San Fransisco,  USA<br>
 						🇦🇷 Buenos Aires, ARG 
 					</h2>
-					<h2 class="f2">
-						Hecho con ❤ en y para LatAm!
+					<h2 class="f4 white">
+						Made with ❤ in and for LatAm!
 					</h2>
 				</div>
 		
@@ -50,31 +50,26 @@
 						'theme_location' => 'menu-2',
 						'menu_id'        => 'footer-left-menu',
 						'container' => 'ul',
-						'menu_class' => 'footer-nav-1 nav ml3 pr3 flex flex-column jic list-none',
+						'menu_class' => 'footer-nav-1 nav ml3 pr3 flex flex-wrap list-none w-40-ns',
 					) );
+				?>
+				<div class="flex flex-column justify-between items-end w-30-ns">
+					<?php	wp_nav_menu( array(
+							'theme_location' => 'menu-4',
+							'menu_id'        => 'footer-social-menu',
+							'container' => 'ul',
+							'menu_class' => 'footer-social w-10-ns ml3 flex jic list-none items-stretch',
+						) );
+						?>
+					<div class="pt4 flex flex-column items-end">
+						<a href="https://marcopolo.agency" class="no-deco white f6" target="_blank">Made by Marco Polo</a>
+						<p class="white f6 pb2">2022 ® Copyright Güeno LLC.</p>
+					</div>
+				</div>
 				
-					wp_nav_menu( array(
-						'theme_location' => 'menu-3',
-						'menu_id'        => 'footer-left-2-menu',
-						'container' => 'ul',
-						'menu_class' => 'footer-nav-2 nav ml3 pr3 flex flex-column jic list-none',
-					) );
-					
-
-					wp_nav_menu( array(
-						'theme_location' => 'menu-4',
-						'menu_id'        => 'footer-social-menu',
-						'container' => 'ul',
-						'menu_class' => 'footer-social w-10-ns ml3 flex flex-column jic list-none items=stretch',
-					) );
-					
-					?>
 		</div>
 
-		<div class="pv4 flex jic">
-			<p>2022 ® Copyright Güeno LLC.</p>
-			<a href="https://marcopolo.agency" class="no-deco black" target="_blank">Made by Marco Polo</a>
-		</div>
+		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

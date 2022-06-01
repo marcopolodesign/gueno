@@ -58,67 +58,11 @@
 
 
 
-
-<style>
-  .code-ui-snippet {
-    margin: auto;
-    overflow: hidden;
-    border-style: solid;
-    border-width: 1px;
-    border-color: hsla(0, 0%, 100%, 0.2);
-    border-radius: 3px;
-    background-color: #000;
-    font-family: 'IBM Plex Mono', sans-serif;
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 500;
-}
-
-.code-ui-snippet-row {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
-.code-row-number {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 28px;
-    min-height: 28px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-color: hsla(0, 0%, 100%, 0.15);
-    color: hsla(0, 0%, 100%, 0.5);
-}
-.code-row-content {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding-right: 14px;
-    padding-left: 14px;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-}
-.code-ui-snippet-text {
-    /* white-space: nowrap; */
-    color: #fff;
-}
-.text-primary-2 {
-    color: var(--mainColor) !important;;
-}
-</style>
+<!-- Pendientes:
+header animation
+img carrousel logos code
+img gif
+new icons
+mobile
+light/dark
+ -->

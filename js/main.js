@@ -211,6 +211,26 @@ const instagram = () => {
 
 // instagram();
 
+const onScroll = () => {
+  let header = document.querySelector('header');
+  let prevScroll = 0;
+  document.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll < 100) {
+      header.classList.remove('scrolled');
+    } else if (currentScroll > 100 && prevScroll < currentScroll) {
+      header.classList.add('scrolled');
+    } else if (prevScroll - 15 > currentScroll) {
+      // header.classList.remove('scrolled');
+    }
+
+    prevScroll = currentScroll;
+  });
+};
+onScroll();
+
+
 barba.init({
   timeout: 5000,
   prevent: ({ el }) => el.classList.contains('barba-prevent'),
