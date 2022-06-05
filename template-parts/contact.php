@@ -1,6 +1,6 @@
 <div class="fixed top-0 left-0 w-100 min-h-100 flex contact-form-container o-0 pointers-none">
   <div class="contact-bg min-h-100 w-40 desktop"></div>
-  <div class="w-60-ns bg-main-gradient contact-content container pv5 flex relative">
+  <div class="w-60-ns bg-secondary-gradient contact-content container pv5 flex relative">
       <div id="close-contact" class="absolute top-0 right-0 white container-xs pv3 anchor">
         Cerrar
       </div>

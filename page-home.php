@@ -59,10 +59,12 @@
 
 
 <!-- Pendientes:
-header animation
-img carrousel logos code
-img gif
-new icons
-mobile
-light/dark
+img gif -> Jueves am [done]
+img new lang -> Jueves am [done]
+img rocket -> Jueves am [done]
+new icons -> Jueves am [done]
+mobile -> Viernes/Sabado
+gradients -> pending to do?
+light/dark -> Viernes/Sábado [done]
+loader animation
  -->

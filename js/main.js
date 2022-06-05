@@ -132,10 +132,6 @@ const runScripts = () => {
   initScripts();
 };
 
-
-
-
-
 const instagram = () => {
   let fields = 'id,username, media_type, media_url, timestamp, permalink, comments'
 
@@ -211,7 +207,11 @@ const instagram = () => {
 
 // instagram();
 
-const onScroll = () => {
+let menu = document.querySelector('.menu');
+let menuTrigger = document.querySelector('div.menu-trigger');
+let menuInner = document.querySelector('header nav')
+
+const openMenu = () => {
   let header = document.querySelector('header');
   let prevScroll = 0;
   document.addEventListener('scroll', () => {
@@ -227,9 +227,61 @@ const onScroll = () => {
 
     prevScroll = currentScroll;
   });
-};
-onScroll();
 
+  let menuOG = menuTrigger.innerHTML;
+
+  // let allLinks = menu.querySelectorAll('a');
+
+
+  menuTrigger.addEventListener('click', () => {
+    header.classList.toggle('menu-open');
+    menuInner.classList.toggle('open');
+
+    // document.querySelector('html').classList.toggle('h.100vh');
+    // document.querySelector('html').classList.toggle('overflow-hidden');
+
+    if (header.classList.contains('menu-open')) {
+      menuTrigger.innerHTML = `<svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 1L1.00001 7.99999" stroke="black"/>
+      <path d="M8 8L1.00001 1.00001" stroke="black"/>
+      </svg>
+      `;
+      header.classList.add('scrolled');
+
+      document.querySelector('main').style.opacity = '0.3'
+      document.querySelector('main').style.pointerEvents = 'none'
+
+    } else {
+      menuTrigger.innerHTML = menuOG;
+
+      document.querySelector('main').style.opacity = ''
+      document.querySelector('main').style.pointerEvents = ''
+      header.classList.remove('scrolled');
+
+    }
+  });
+};
+openMenu();
+
+const animateGraph = () => {
+  let images = document.querySelectorAll('.animated-images-container div');
+  images[0].style.opacity = '1';
+  if (images.length > 0) {
+    let i = 0
+    setInterval(() => {
+      if (i >= images.length) {
+        i = 0;
+      }
+      images.forEach(img => {
+        img.style.opacity = 0
+      })
+      images[i].style.opacity = 1;
+      i++
+    }, 1750);
+  }
+}
+
+animateGraph();
 
 barba.init({
   timeout: 5000,
@@ -303,7 +355,6 @@ barba.init({
 runScripts();
 
 
-
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
@@ -317,7 +368,6 @@ window.addEventListener('resize', () => {
 });
 
 
-
 setInterval(() => {
   document.querySelectorAll('.ball-gradient').forEach(s => {
     // if (s.classList.contains('change')) {
@@ -325,6 +375,7 @@ setInterval(() => {
     // }
   })
 }, 5000);
+
 
 
 const animateHome = () => {
@@ -393,9 +444,9 @@ const contact = () => {
       .to(bg, { opacity: 0 }, 0);
   });
 };
-setTimeout(() => {
-  contact();
-}, 2000);
+
+contact();
+
 
 
 

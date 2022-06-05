@@ -54,14 +54,16 @@
 					) );
 				?>
 				<div class="flex flex-column justify-between items-end w-30-ns">
-					<?php	wp_nav_menu( array(
-							'theme_location' => 'menu-4',
-							'menu_id'        => 'footer-social-menu',
-							'container' => 'ul',
-							'menu_class' => 'footer-social w-10-ns ml3 flex jic list-none items-stretch',
-						) );
-						?>
-					<div class="pt4 flex flex-column items-end">
+					<div class="footer-social ml3-ns flex jic list-none items-stretch">
+						<a class="social-icon lc-black-svg">
+							<?php get_template_part('template-parts/content/linked');?>
+						</a>
+
+						<a class="social-icon db ml3">
+							<?php get_template_part('template-parts/content/twitter');?>
+						</a>
+					</div>
+					<div class="pt4 flex flex-column items-end page-aob">
 						<a href="https://marcopolo.agency" class="no-deco white f6" target="_blank">Made by Marco Polo</a>
 						<p class="white f6 pb2">2022 ® Copyright Güeno LLC.</p>
 					</div>

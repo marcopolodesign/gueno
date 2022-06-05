@@ -43,15 +43,17 @@
     </section>
 
 
-  <?php elseif( get_row_layout() == 'items' ): ?>
-    <section class="relative z-5 w-100 pt6 pb3 mp-items-container container relative will-animate">
+  <?php elseif( get_row_layout() == 'items' ): 
+      $aditional = get_sub_field('aditional');
+      ?>
+    <section class="relative z-5 w-100 pb3 mp-items-container container relative will-animate <?php echo $aditional;?>">
       <div class="mp-items-inner-c z-5">
        <?php the_sub_field('items_title');?>
     
 
         <div class="mp-items-inner flex flex-wrap column-mobile justify-center mt5">
         <?php if( have_rows('item') ): while ( have_rows('item') ) : the_row();?>
-          <div class="mp-item smooth-t pt4 pb3 pl3 pr4 mh2-ns mb3 w-25-ns h-max">
+          <div class="mp-item smooth-t pt4 pb3 pl3 pr4 mh2-ns mb3 w-25-ns">
             <img class="icon db ml-0 mr-auto mb4" src="<?php the_sub_field('icon');?>">
             <h3 class="f4 black mv2 fw4"><?php the_sub_field('title');?></h3>
             <?php the_sub_field('text');?>
@@ -89,8 +91,8 @@
               </div>
           <?php endif;?>
           <div class="flex flex-column ml4 white">
-            <h3 class="white lc-secondary"><?php the_sub_field('title');?></h3>
-            <?php the_sub_field('description');?>
+            <h3 class="white lc-black mb1"><?php the_sub_field('title');?></h3>
+            <div class="lc-secondary"><?php the_sub_field('description');?></div>
           </div>
         </div>
     
@@ -140,26 +142,28 @@
       endif; ?>
 
 
-    <div class="mp-block-full-image-text relative mv5 pv5  flex flex-column <?php echo $isReverse; echo $aditional;?>">
+    <div class="mp-block-full-image-text relative mv5 pv5  flex flex-column <?php echo $isReverse;?> <?php echo $aditional;?>">
     <div class="relative z-2 container">
       <div class="w-60-ns center">
         <?php the_sub_field('text');?>
      </div>
-      <div class="flex flex-wrap column-mobile justify-center">
-        <?php if( have_rows('item_list') ): while ( have_rows('item_list') ) : the_row();?>
-          <div class="flex flex-column mb4 w-30-ns mh3-ns pr3">
-            <?php if (get_sub_field('icon')):?>
-                <div class="list-item-icon">
-                  <img src=<?php the_sub_field('icon');?>>
-                </div>
-            <?php endif;?>
-            <div class="flex flex-column mt2 black pr5">
-              <h3 class="black lc-secondary"><?php the_sub_field('title');?></h3>
-              <?php the_sub_field('description');?>
+     <?php if (get_sub_field('item_list')): ?>
+        <div class="flex flex-wrap column-mobile justify-center">
+          <?php if( have_rows('item_list') ): while ( have_rows('item_list') ) : the_row();?>
+            <div class="flex flex-column mb4 w-30-ns mh3-ns pr3 individual-item">
+              <?php if (get_sub_field('icon')):?>
+                  <div class="list-item-icon">
+                    <img src=<?php the_sub_field('icon');?>>
+                  </div>
+              <?php endif;?>
+              <div class="flex flex-column mt2 black pr5">
+              <h3 class="white lc-black mb1"><?php the_sub_field('title');?></h3>
+              <div class="lc-secondary lh1"><?php the_sub_field('description');?></div>
+              </div>
             </div>
-          </div>
-        <?php endwhile; endif; ?>
-      </div>
+          <?php endwhile; endif; ?>
+        </div>
+      <?php endif;?>
 
       </div>
       <?php $link = get_sub_field('cta');
@@ -177,10 +181,16 @@
         <div class="relative z-2 mv4 container <?php the_sub_field('image_width');?>">
           <img class="" src="<?php the_sub_field('image');?>">
         </div>
-
-        <div class="absolute-cover bg-color-fs" style="background: <?php the_sub_field('background_color');?>; height: 70%; top: unset; bottom: 0;"></div>
-      
+       <?php elseif (get_sub_field('image_carrousel')): ?>
+              <div class="relative animated-images-container <?php the_sub_field('image_width');?>">
+                <?php if( have_rows('image_carrousel') ): while ( have_rows('image_carrousel') ) : the_row();?>
+                  <div class="relative z-2 mv4 container ">
+                  <img src="<?php the_sub_field('image');?>">
+                  </div>
+                <?php  endwhile; endif; ?>
+              </div>
       <?php endif; ?>
+      <div class="absolute-cover bg-color-fs" style="background: <?php the_sub_field('background_color');?>; height: 70%; top: unset; bottom: 0;"></div>
     </div>
 
 
@@ -212,12 +222,12 @@
     <?php elseif( get_row_layout() == 'map') : ?>
       <section class="map-container will-animate pt5">
         <div class="map-content relative ">
-          <h2 class="fw4 f1 tc white lc-black measure center w-50-ns relative z-2" style="margin-bottom: -60px !important"><?php the_sub_field('title');?></h1>
+          <h2 class="fw4 f1 tc white lc-black measure center w-50-ns relative z-2" style="margin-bottom: -60px"><?php the_sub_field('title');?></h1>
         
           <img style="max-width: 50vw" class="db center" src="/wp-content/uploads/2022/05/Frame-7.png">
       
-          <div class="flex justify-end items-center absolute-center z-4" style="transform: translateX(-50%) !important;bottom: 0 !important;top: unset !important;" >
-            <img class="db center" src="/wp-content/uploads/2022/05/Frame-8.svg">
+          <div class="flex justify-end items-center absolute-center z-4" style="transform: translateX(-50%) !important;bottom: 0;top: unset !important;" >
+            <img class="db center" src="<?php the_sub_field('api_image');?>">
           </div>
 
           <div class="map-texture-1 absolute top-0">

@@ -1582,6 +1582,10 @@ div.wpforms-container-full .wpforms-form button[type='submit'] {
     display: block;
   }
 
+  .mobile.flex {
+    display: flex;
+  }
+
   .desktop {
     display: none;
   }
