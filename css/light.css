@@ -1,0 +1,47 @@
+:root {
+    --background: #fff;
+    --secondaryColor: #000;
+    --thirdColor: #5C5C5C
+  }
+
+  .lc-black {
+    color: #000;
+  }
+
+  .lc-secondary {
+    color: var(--thirdColor)
+  }
+
+  .white {
+    color: var(--secondaryColor);
+  }
+
+  header {
+    background-color: rgba(255, 255, 255, 0.82);
+  }
+  header.scrolled {
+    box-shadow: 0 4px 24px rgb(0 0 0 / 25%);
+
+  }
+
+  .gradients-container {
+    background: linear-gradient(rgba(255, 255, 255, 0), #ffffff 92.97%);
+  }
+
+  footer {
+    background-color: #ccc !important;
+  }
+
+  header svg path#eno {
+    fill: #000;
+  }
+
+  .color-toggle svg.active path {
+    fill: #000;
+    opacity: 1;
+  }
+  
+  .color-toggle  svg path {
+    fill: var(--thirdColor);
+    opacity: .3;
+  }

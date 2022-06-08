@@ -16,9 +16,13 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
-	
+	<link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>	
 	<?php wp_head(); ?>
+
+
+	<link rel="stylesheet" id="dark-mode" href="/wp-content/themes/gueno/css/dark.css" >
+    <link rel="stylesheet" id="light-mode" href="/wp-content/themes/gueno/css/light.css">
+
 
 </head>
 
@@ -43,8 +47,15 @@
 					</g>
 				</svg>
 			</div>
-			<nav>
-			<?php
+			<nav class="flex items-center">
+
+			<div class="color-toggle mr3-ns flex items-center">
+				<div class="mr3 anchor" id="light-mode-toggle"><?php get_template_part('template-parts/content/sun');?></div>
+				<div id="dark-mode-toggle" class="dark anchor"><?php get_template_part('template-parts/content/moon');?></div>
+			</div>
+
+
+				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'header-left-menu',
@@ -53,7 +64,11 @@
 				) );
 				?>
 
-				<div class="mobile header-social flex items-center justify-center">
+				<div class="flex jic lang-switcher ml4-ns">
+					<a id="en" href="/" class="white has-after anchor">EN</a>
+					<a id="en" href="/es" class="ml3 white has-after anchor">ES</a>
+				</div>
+				<div class="mobile header-social flex items-center justify-center mb4">
 					<a class="social-icon lc-black-svg">
 						<?php get_template_part('template-parts/content/linked');?>
 					</a>
@@ -63,6 +78,7 @@
 					</a>
 				</div>
 			</nav>
+			<div class="absolute-cover z--1 menu-bg"></div>
 		</div>			
 	</header><!-- #masthead -->
 
@@ -73,3 +89,9 @@
 	<?php get_template_part('template-parts/contact'); ?>
 
 	<div data-barba="wrapper">
+
+
+
+
+
+

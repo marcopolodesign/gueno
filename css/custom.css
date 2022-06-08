@@ -11,82 +11,13 @@
   --smooth: all 0.45s cubic-bezier(0.4, 0, 0, 1);
   --border-radius: 8px;
 
-
   /* For @CS Dark */
 /* --background: #212121; */
-
-
 /* For @CS Light */
 
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-      --background: #fff;
-      --secondaryColor: #000;
-      --thirdColor: #5C5C5C
-    }
 
-    .lc-black {
-      color: #000;
-    }
-
-    .lc-secondary {
-      color: var(--thirdColor)
-    }
-
-    .white {
-      color: var(--secondaryColor);
-    }
-
-    header {
-      background-color: rgba(255, 255, 255, 0.82);
-    }
-    header.scrolled {
-      box-shadow: 0 15px 32px rgb(0 0 0 / 25%);
-
-    }
-
-    .gradients-container {
-      background: linear-gradient(rgba(255, 255, 255, 0), #ffffff 92.97%);
-    }
-
-    footer {
-      background-color: #ccc !important;
-    }
-
-    header svg path#eno {
-      fill: #000;
-    }
-    
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #212121;
-    --secondaryColor: #C3C3C3;
-  }
-
-  .has-secondary, .secondary-color {
-    color: var(--secondaryColor)
-  }
-
-  header {
-    z-index: 99;
-  }
-
-  header.scrolled {
-    background-color: #212121dd;
-  }
-
-  .gradients-container {
-    background: linear-gradient(rgba(33, 33, 33, 0), #212121 92.97%);
-  }
-
-  .menu-trigger svg path {
-    stroke: var(--mainColor)
-  }
-}
 
 body {
   background-color: var(--background);
@@ -251,7 +182,7 @@ header.scrolled {
 }
 
 .header-nav li.main-cta:hover a {
-  color: var(--mainDarkColor)
+  color: var(--mainGradient)
 }
 
 .main-cta.has-gradient {
@@ -267,12 +198,19 @@ header.scrolled {
   color: #000 !important;
 }
 
+header .main-cta {
+  background: var(--mainColor);
+}
 
-@media(min-width: 560px) {
+header .main-cta:hover {
+  /* background: var(--mainGradient) !important; */
+}
+
+@media (min-width: 560px) {
   /* Animations */
 
   .main-cta.bg-main-color:hover {
-    background-color: var(--mainDarkColorII) !important;
+    background: var(--mainGradient) !important;
     color: var(--mainColor) !important;
   }
   
@@ -296,6 +234,15 @@ header.scrolled {
 
 .main-cta > * {
   margin: auto;
+}
+
+
+.lang-switcher a:not(.active) {
+  opacity: 0.5;
+}
+
+.lang-switcher a:hover {
+  opacity: 1;
 }
 
 
@@ -354,9 +301,9 @@ header.scrolled {
   padding-bottom: 0px;;
 }
 
-.map-content img {
-  /* mix-blend-mode: multiply; */
-}
+/* .map-content img {
+  mix-blend-mode: multiply;
+} */
 
 .map-texture-1 {
   left: -3%;
@@ -575,6 +522,20 @@ header.scrolled {
 }
 
 
+.color-toggle svg {
+  width: auto;
+  height: 30px;
+}
+
+#dark-mode-toggle svg {
+  height: 25px;
+}
+
+
+
+
+
+
 @media (min-width: 1440px) {
   .container {
     padding-left: 10vw;
@@ -765,27 +726,57 @@ header.scrolled {
 }
 /* Header Nav */
 
-header nav{
+.menu-bg {
+opacity: 0;
+transition: all 0.3s ease;
+background-color: #000;
+z-index: 98;
+pointer-events: none;
+position: fixed;
+top: 75.4px;
+height: calc(100vh - 75.4px);
+}
+
+header.menu-open .menu-bg {
+opacity: .7;
+pointer-events: all;
+
+}
+
+header nav {
   position: fixed;
   top: 75.4px;
   left: 0;
   width: 100%;
-  height: 40vh;
+  /* height: 40vh; */
   background: var(--secondaryGradient);
   opacity: 0;
   pointer-events: none;
+  transform: scaleY(0);
+  transform-origin: top;
   transition: all 0.3s ease;
+  z-index: 99;
+  flex-direction: column;
+}
+
+.color-toggle {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 100px;
+  padding: 15px;
+  margin-top: 20px;
 }
 
 header nav.open {
   opacity: 1;
   pointer-events: all;
+  transform: scaleY(1);
+  transition: all 0.4s 0.3s ease;
+
 }
 
-.menu-trigger svg {
+.menu-trigger svg, .color-toggle svg {
   width: 30px;
   height: auto !important;
-
 }
 
 header nav ul {
@@ -797,6 +788,16 @@ header nav ul {
   width: 100% !important;
   padding-left: 20px;
   padding-right: 20px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;;
+}
+
+header nav.open ul {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 0.6s 0.5s ease;;
+
 }
 
 .header-nav li:last-child  {

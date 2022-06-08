@@ -8,7 +8,7 @@ const runScripts = () => {
   const animatePosts = () => {
 
     let posts = Array.prototype.slice.call(pageName.children);
-    console.log(posts);
+    // console.log(posts);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -115,9 +115,31 @@ const runScripts = () => {
     });
   }
 
+  const langSwitcher = () => {
+    let lang = window.location.pathname;
+    let switchers = document.querySelectorAll('.lang-switcher a');
+    if (lang != "/") {
+    lang = lang.substring(1)
+    lang = lang.substring(0, lang.length - 1)
+   
+    console.log(lang)
 
+    switchers.forEach(sw =>{
+     if (lang == sw.innerText.toLowerCase()) {
+      sw.classList.add('active');
+     } else {
+      sw.classList.remove('active')
+     }
+    })
+  } else {
+    switchers[0].classList.add('active')
 
+  }
+    
+  }
+  
 
+  langSwitcher();
 
   const initScripts = () => {
     if (pageName.classList.contains('home')) {
@@ -194,7 +216,7 @@ const instagram = () => {
         }, 1000);
         window.addEventListener('resize', () => {
           width = document.querySelector('.instagram-feed div a').clientWidth;
-          console.log(width);
+          // console.log(width);
           document.querySelectorAll('.instagram-feed div a').forEach((post) => {
             post.style.height = width + 'px';
           });
@@ -210,6 +232,7 @@ const instagram = () => {
 let menu = document.querySelector('.menu');
 let menuTrigger = document.querySelector('div.menu-trigger');
 let menuInner = document.querySelector('header nav')
+let menuBg = document.querySelector('.menu-bg');
 
 const openMenu = () => {
   let header = document.querySelector('header');
@@ -248,18 +271,28 @@ const openMenu = () => {
       `;
       header.classList.add('scrolled');
 
-      document.querySelector('main').style.opacity = '0.3'
+      // document.querySelector('main').style.opacity = '0.3'
       document.querySelector('main').style.pointerEvents = 'none'
 
     } else {
       menuTrigger.innerHTML = menuOG;
 
-      document.querySelector('main').style.opacity = ''
+      // document.querySelector('main').style.opacity = ''
       document.querySelector('main').style.pointerEvents = ''
       header.classList.remove('scrolled');
 
     }
   });
+
+  menuBg.addEventListener('click', () => {
+    header.classList.toggle('menu-open');
+    menuInner.classList.toggle('open');
+    menuTrigger.innerHTML = menuOG;
+
+    // document.querySelector('main').style.opacity = ''
+    document.querySelector('main').style.pointerEvents = ''
+    header.classList.remove('scrolled');
+  })
 };
 openMenu();
 
@@ -283,74 +316,69 @@ const animateGraph = () => {
 
 animateGraph();
 
-barba.init({
-  timeout: 5000,
-  prevent: ({ el }) => el.classList.contains('barba-prevent'),
-  transitions: [
-    {
-      leave({ current, next, trigger }) {
-        menuTL.reverse();
-        setTimeout(() => {
-          // menu.classList.add('o-0');
-          // menu.classList.add('pointers-none');
-        }, 1200);
+// barba.init({
+//   timeout: 5000,
+//   prevent: ({ el }) => el.classList.contains('barba-prevent'),
+//   transitions: [
+//     {
+//       leave({ current, next, trigger }) {
+       
+//         return new Promise((resolve) => {
+//           const timeline = gsap.timeline({
+//             defaults: {
+//               ease: Expo.easeOut,
+//             },
+//             onComplete() {
+//               current.container.remove();
+//               resolve();
+//             },
+//           });
+//           timeline
+//           // .call(() => {
+//           //   preLoad[0].classList.add('animate');
+//           // })
+//           // .set(preLoad, { x: '100%', opacity: '1' })
+//           // .to(current.container, { opacity: 0.6, x: '-10%', duration: 2 }, 0)
+//           // .to(preLoad[0], { x: '0%', ease: Power4.easeOut, duration: 1.5 }, 0);
+//         });
+//       },
+//       enter({ current, next, trigger }) {
+//         return new Promise((resolve) => {
+//           window.scrollTo({
+//             top: 0,
+//           });
+//           runScripts();
+//           const timeline = gsap.timeline({
+//             onComplete() {
+//               resolve();
+//             },
+//             defaults: {
+//               duration: 2,
+//               ease: Expo.easeOut,
+//             },
+//           });
 
-        return new Promise((resolve) => {
-          const timeline = gsap.timeline({
-            defaults: {
-              ease: Expo.easeOut,
-            },
-            onComplete() {
-              current.container.remove();
-              resolve();
-            },
-          });
-          timeline
-          // .call(() => {
-          //   preLoad[0].classList.add('animate');
-          // })
-          // .set(preLoad, { x: '100%', opacity: '1' })
-          // .to(current.container, { opacity: 0.6, x: '-10%', duration: 2 }, 0)
-          // .to(preLoad[0], { x: '0%', ease: Power4.easeOut, duration: 1.5 }, 0);
-        });
-      },
-      enter({ current, next, trigger }) {
-        return new Promise((resolve) => {
-          window.scrollTo({
-            top: 0,
-          });
-          runScripts();
-          const timeline = gsap.timeline({
-            onComplete() {
-              resolve();
-            },
-            defaults: {
-              duration: 2,
-              ease: Expo.easeOut,
-            },
-          });
+//           timeline
+//           // .call(() => {
+//           //   preLoad[0].classList.remove('animate');
+//           // })
+//           // .set(next.container, { opacity: 0, x: '10%' })
+//           // .to(preLoad, { x: '-100%', opacity: 1, duration: 2.3 }, 0)
+//           // .to(next.container, { opacity: 1, x: '0' }, 0.5);
+//         });
+//       },
+//     },
 
-          timeline
-          // .call(() => {
-          //   preLoad[0].classList.remove('animate');
-          // })
-          // .set(next.container, { opacity: 0, x: '10%' })
-          // .to(preLoad, { x: '-100%', opacity: 1, duration: 2.3 }, 0)
-          // .to(next.container, { opacity: 1, x: '0' }, 0.5);
-        });
-      },
-    },
-
-  ],
-  views: [
-    {
-      namespace: 'home',
-      afterEnter(data) {
-      },
-    },
-  ],
-  debug: true,
-});
+//   ],
+//   views: [
+//     {
+//       namespace: 'home',
+//       afterEnter(data) {
+//       },
+//     },
+//   ],
+//   debug: true,
+// });
 
 runScripts();
 
@@ -405,7 +433,7 @@ const contact = () => {
   hrefs.forEach((a) => {
     if (a.href.indexOf('#contact') > -1) {
       a.classList.add('barba-prevent');
-      console.log(a)
+      // console.log(a)
       a.addEventListener('click', (e) => {
         e.preventDefault();
 
@@ -457,13 +485,42 @@ const visitedInputs = () => {
   inputs.push(textarea);
 
   inputs.forEach(input => {
-    console.log(input);
+    // console.log(input);
     input.addEventListener("change", (e) => {
       e.target.classList.add('visited');
-      console.log(input)
+      // console.log(input)
     })
   })
 }
 
 
 visitedInputs();
+
+
+let darkModeToggle = document.querySelector('#dark-mode-toggle');
+let lightModeToggle = document.querySelector('#light-mode-toggle');
+
+document.getElementById("light-mode").disabled = true;
+
+darkModeToggle.addEventListener('click', ()=> {
+
+  darkModeToggle.querySelector('svg').classList.add('active');
+  lightModeToggle.querySelector('svg').classList.remove('active');
+
+
+  document.getElementById("dark-mode").disabled = false;
+  document.getElementById("light-mode").disabled = true;
+
+    // console.log('clicking dark');
+})
+
+lightModeToggle.addEventListener('click', ()=> {
+
+  lightModeToggle.querySelector('svg').classList.add('active');
+  darkModeToggle.querySelector('svg').classList.remove('active');
+
+  document.getElementById("dark-mode").disabled = true;
+  document.getElementById("light-mode").disabled = false;
+
+    // console.log('clicking dark');
+})

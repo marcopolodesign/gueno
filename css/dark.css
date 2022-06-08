@@ -1,0 +1,35 @@
+
+  :root {
+    --background: #212121;
+    --secondaryColor: #C3C3C3;
+  }
+
+  .has-secondary, .secondary-color {
+    color: var(--secondaryColor)
+  }
+
+  header {
+    z-index: 99;
+  }
+
+  header.scrolled {
+    background-color: #212121dd;
+  }
+
+  .gradients-container {
+    background: linear-gradient(rgba(33, 33, 33, 0), #212121 92.97%);
+  }
+
+  .menu-trigger svg path {
+    stroke: var(--mainColor)
+  }
+
+  .color-toggle svg.active  path {
+    fill: var(--mainColor);
+    opacity: 1
+  }
+  
+  .color-toggle  svg path {
+    fill: #5C5C5C;
+    opacity: .3
+  }

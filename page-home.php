@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php 
+/** Template Name: Home */
+get_header(); 
+?>
 <main id="main" data-barba="container" data-barba-namespace="home" class="home no-mt" bg-color="white">
   <section class="relative mt6 overflow-x-hidden">
     <div class="container home-starter">

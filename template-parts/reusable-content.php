@@ -157,7 +157,7 @@
                   </div>
               <?php endif;?>
               <div class="flex flex-column mt2 black pr5">
-              <h3 class="white lc-black mb1"><?php the_sub_field('title');?></h3>
+              <h3 class="lc-black mb1"><?php the_sub_field('title');?></h3>
               <div class="lc-secondary lh1"><?php the_sub_field('description');?></div>
               </div>
             </div>
