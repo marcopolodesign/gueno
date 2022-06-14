@@ -532,6 +532,9 @@ header .main-cta:hover {
 }
 
 
+.logos-container ul li {
+  margin:15px  auto;
+}
 
 
 
@@ -824,10 +827,9 @@ header nav.open ul {
 }
 
 .logos-container ul li {
-  margin-bottom: 15px;
+  width: 50%;
 }
 
-.logos-container ul li:first-child{display: none;}
 
 .logos-container img {
   width: 120px !important;

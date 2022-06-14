@@ -41,7 +41,9 @@
 						🇦🇷 Buenos Aires, ARG 
 					</h2>
 					<h2 class="f4 white">
-						Made with ❤ in and for LatAm!
+					<?php
+					 $id =get_the_ID();
+					 the_field('footer_text', $id);?>
 					</h2>
 				</div>
 		
@@ -55,11 +57,11 @@
 				?>
 				<div class="flex flex-column justify-between items-end w-30-ns">
 					<div class="footer-social ml3-ns flex jic list-none items-stretch">
-						<a class="social-icon lc-black-svg">
+						<a href="https://ar.linkedin.com/company/somosgueno" target="_blank" class="social-icon lc-black-svg">
 							<?php get_template_part('template-parts/content/linked');?>
 						</a>
 
-						<a class="social-icon db ml3">
+						<a href="https://twitter.com/somosgueno" target="_blank" class="social-icon db ml3">
 							<?php get_template_part('template-parts/content/twitter');?>
 						</a>
 					</div>

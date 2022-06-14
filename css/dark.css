@@ -30,6 +30,6 @@
   }
   
   .color-toggle  svg path {
-    fill: #5C5C5C;
-    opacity: .3
+    fill: var(--secondaryColor);
+    opacity: .6
   }

@@ -65,8 +65,8 @@
 				?>
 
 				<div class="flex jic lang-switcher ml4-ns">
-					<a id="en" href="/" class="white has-after anchor">EN</a>
-					<a id="en" href="/es" class="ml3 white has-after anchor">ES</a>
+					<a id="en" href="/" class="white has-after anchor  lc-black">EN</a>
+					<a id="en" href="/es" class="ml3 white has-after anchor lc-black">ES</a>
 				</div>
 				<div class="mobile header-social flex items-center justify-center mb4">
 					<a class="social-icon lc-black-svg">
